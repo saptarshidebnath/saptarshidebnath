@@ -1,0 +1,17 @@
+.home-intro{
+    width: 100%;
+    h1{
+        font-size: 20vw;
+    }
+    .subheader{
+        font-size: 4vw;
+    }
+    .highlight{
+        color: beige;
+        &:hover{
+            color: red;
+            transition: all 0.5s ease;
+        }
+    }
+    
+}

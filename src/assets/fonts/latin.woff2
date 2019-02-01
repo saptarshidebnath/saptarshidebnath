@@ -1,0 +1,11 @@
+--2019-01-31 11:15:35--  https://fonts.gstatic.com/s/karla/v6/qkBbXvYC6trAT7RVLtw.woff2
+Resolving fonts.gstatic.com (fonts.gstatic.com)... 172.217.4.131, 2607:f8b0:4007:80e::2003
+Connecting to fonts.gstatic.com (fonts.gstatic.com)|172.217.4.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6328 (6.2K) [font/woff2]
+Saving to: ‘qkBbXvYC6trAT7RVLtw.woff2’
+
+     0K ......                                                100% 2.48M=0.002s
+
+2019-01-31 11:15:36 (2.48 MB/s) - ‘qkBbXvYC6trAT7RVLtw.woff2’ saved [6328/6328]
+
