@@ -1,0 +1,21 @@
+<section class="homepage">
+  <h1 class="headline">I'm Saptarshi,</h1>
+  <h5 class="subheader">a Full Stack Developer.</h5>
+  <p>
+    I work with
+    <span
+      class="highlight"
+      *ngFor="let skillItem of getSkillSets(); let isLast = last"
+    >
+      {{ skillItem }}{{ isLast ? "" : "," }}
+    </span>
+
+    using the philosopy of
+    <span
+      class="highlight"
+      *ngFor="let patternName of getDesignPatterns(); let isLast = last"
+    >
+      {{ patternName }}{{ isLast ? "" : "," }} </span
+    >.
+  </p>
+</section>

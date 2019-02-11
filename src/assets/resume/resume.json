@@ -1,0 +1,212 @@
+{
+  "basicinfo": {
+    "firstName": "Saptarshi",
+    "lastName": "Debnath",
+    "label": "Programmer",
+    "image": "https://avatars3.githubusercontent.com/u/7835253",
+    "email": "saptarshi DOT devnath at gmail DOT com",
+    "phone": "+1 (973) 348-5557",
+    "url": "http://saptarshidebnath.com",
+    "profile": [
+      "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!"
+    ],
+    "location": {
+      "city": "Scottsdale",
+      "country": "USA",
+      "state": "Arizona"
+    },
+    "network": [
+      {
+        "network": "Github",
+        "username": "saptarshidebnath",
+        "url": "https://github.com/saptarshidebnath"
+      },
+      {
+        "network": "Linkedin",
+        "username": "saptarshidebnath",
+        "url": "https://www.linkedin.com/in/saptarshidebnath/"
+      },
+      {
+        "network": "Twitter",
+        "username": "@saptarshidev",
+        "url": "https://twitter.com/saptarshidev"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "MindTree - Major Corporate Travel Manager",
+      "location": "Phoenix, Arizona, USA",
+      "description": "Maintenenace of fronted website using the microservice philosophy.",
+      "position": "Senior Software Engineer",
+      "url": "http://www.mindtree.com/",
+      "startDate": "2017-09-01",
+      "endDate": "2018-12-31",
+      "stillWorking": false,
+      "summary": [
+        "As part of this endeavor, my job is to enhance and maintain a travel website. The travel website is being developed using the philosophy of microservice architecture. There are total of 8 services that collates the user’s profile and trip information from various external systems and display all of them in a single page."
+      ],
+      "responsibility": [
+        "Understanding and analysis of business requirements. Transformation of the requirement to a User Case and User Stories.",
+        "Estimation of user stories and effort required to develop business logic.",
+        "Enhancement and maintenance (including test cases) of the website and relevant microservices.",
+        "Keeping the microservices and assorted services up and running in the lower environments.",
+        "Review of peer’s deliverables including code and documentation.",
+        "Writing automatic test cases using selenium and Jenkins",
+        "Deployment of application to different environment like DEV, QA PROD."
+      ],
+      "toolsandtech": [
+        "Java 8, Spring Boot 141, ActiveMQ.",
+        "Red Hat OpenShift, Jenkins, Docker container",
+        "MySQL 5, Datastax Cassandra, Postgress SQL and Redis for session storage.",
+        "Angular 2, HTML5, Typescript, CSS3, bootstrap.",
+        "Bash scripting to automate daily repetitive work load."
+      ]
+    },
+    {
+      "name": "Wipro Technolgoy - Major US based credit card provider",
+      "location": "Richmond, Virgina, USA",
+      "description": "Development, maintainance of DevOps tools and automated systems to maintiain stability of the development.",
+      "position": "Senior Project Engineer",
+      "url": "http://www.wipro.com/",
+      "startDate": "2015-10-01",
+      "endDate": "2017-08-31",
+      "stillWorking": false,
+      "summary": [
+        "The virtual development environment is a project where a fully working development environment is provided to the developer such that he or she can continue work even if the developer gets disconnected from the network. The initial setup is fully automated which installs the necessary platforms and custom scripts and prepares the virtual machine for the developer.",
+        "The Hadoop automation testing is a web-based interface which configures pre-defined test cases and triggers the same in configured remote Unix boxes over SFTP and SSH.",
+        "The AMI [Amazon machine image] Lab certification project using JAVA is an ongoing project where an automated process validates a custom AMI for its stability. The project involved around: - <ul><li>Automatically picking up the latest AMI id,</li><li>Automatically starting up an ec2 instances with that AMI id</li><li>Running different test cases against the OS and pre-selected applications to check the stability</li><li>Writing Java8 based modules which would determine stability of infrastructure</li><li>Once the result is out, publish the same to different concerned teams as per the test results.</li></ul>",
+        "The Stargate was a devops tool which was being developed very actively. The websites deploy the ideology of DevOps along different environment like DEV CERT QA PROD. The tool was being developed in-house without any pre-configured utilities available in the market. I have worked on a major module called Software Intake Form which is used primarily to check if installation of a new Software / Tool in the current open source ecosystem is going to break the system or not.<ul><li>A Web Interface which logs all the request.</li><li>A validation system with human intervention to understand if the request is a valid request or not.</li><li>A robust automated BDD based test system which checks if the new system is stable or not.</li><li>A reporting module, which reports the test data to the front end.</li><li>It also contains modules to trigger Change Order and request for doing a performance testing once the initial validation is done.</li><li>The system understands at which stage; a request is in and will take the necessary course of action once the necessary requirements are completed by its users and admins.</li></ul>"
+      ],
+      "responsibility": [
+        "Understanding the requirement from client and estimating efforts for the work.",
+        "Coding and unit testing of shell scripts, Java program as per requirements.",
+        "Implement websites using responsive web design to create a front end for devops tools.",
+        "Create posters to be displayed during demonstrations."
+      ],
+      "toolsandtech": [
+        "Vagrant, Shell Script, Ruby, GitHub, Oracle Virtual Box, Agile for project management.",
+        "Java8, Spring MVC, Shell Script, HTML5, Angular JS, Bootstrap, MongoDB,",
+        "Core Java, Node JS, Cucumber/Gherkin as BDD based testing framework, shell scripts [bash], Jenkins CI, GitHub"
+      ]
+    },
+    {
+      "name": "Wipro Technolgoy - Major pharamceutical giant",
+      "location": "East Hanover, New Jersey, USA",
+      "description": "Development and maintainance of around 35 marketting website for Onclogy related medicines.",
+      "position": "Senior Project Engineer",
+      "url": "http://www.wipro.com/",
+      "startDate": "2011-11-14",
+      "endDate": "2015-09-31",
+      "stillWorking": false,
+      "summary": [
+        "I worked for the brand site project dealt with development and maintaining of around 40 US specific branded or un-branded (by drug) e-marketing website.",
+        "The websites are built on top of a framework proprietary to the client (Uses Struts 1.x as the base).",
+        "This project involved both fresh development and maintenance of the said websites.",
+        "I have worked both in development section and the maintenance team.",
+        "At onsite I was working as the onsite manager / Team Lead for the maintenance team engaged in this project."
+      ],
+      "responsibility": [
+        "Coding and Unit Testing for deliverables.",
+        "Deploying changes to the variouse regions.",
+        "Supporting user acceptance testing and bug fixing for the deliverables.",
+        "Mentoring peers / Juniors."
+      ],
+      "toolsandtech": [
+        "JSP-Servlet, Java 1.7",
+        "HTML (with HTML 5), CSS2,3",
+        "Vanilla java scripts, jQuery, Mootools."
+      ]
+    },
+    {
+      "name": "Wipro Technolgoy - Major US based custodian bank",
+      "location": "Bangalore, India",
+      "description": "Development and maintainance of custom reports for a custodian bank.",
+      "position": "Project Engineer",
+      "url": "http://www.wipro.com/",
+      "startDate": "2009-09-22",
+      "endDate": "2011-09-30",
+      "stillWorking": false,
+      "summary": [
+        "The US Based custodian bank is one of the highly successful Custodian Bank across globe.",
+        "The Custom Reporting is a Mainframe / ETL / Actuate project which have the functionality of generating highly customized reports and transmitting them from bank infrastructure to its clients.",
+        "This project is about development and enhancements to the existing Custom Reports as specified by the customer."
+      ],
+      "responsibility": [
+        "Coding and Unit Testing for reports written in Mainframe FOCUS",
+        "Writing multi stage JCL to generate the report and transmit them",
+        "Generating deployment document for production ready code.",
+        "Supporting user acceptance testing and bug fixing for the deliverables."
+      ],
+      "toolsandtech": ["Mainframe FOCUS, Actuate eRD Pro, DB2 and VSAM, JCL"]
+    },
+    {
+      "name": "Objectsol Technologies - UK based mobile game developer",
+      "location": "Kolkata, India",
+      "description": "Development and maintainance of around 35 marketting website for Onclogy related medicines.",
+      "position": "Project Engineer",
+      "url": "http://www.wipro.com/",
+      "startDate": "2009-03-01",
+      "endDate": "2011-07-31",
+      "stillWorking": false,
+      "summary": [
+        "I have worked OpenGL ES1.1 based iPhone game.",
+        "The game is called Crazee Cube which is the digital version of Bedlam Cube http://en.wikipedia.org/wiki/Bedlam_cube.",
+        "This application was initially built for iPhone ver 1.",
+        "The application is show cased at :-<ul><li>http://www.youtube.com/watch?v=XifXyieukqw</li><li>https://www.youtube.com/watch?v=zQCDJqYa3ls</li><li>http://www.gamesindustry.biz/articles/crazee-cube-iphone-version-of-the-dragons--den-contender--with-a-potential-world-record-to-claim</li></ul>"
+      ],
+      "responsibility": [
+        "Coding and Unit Testing",
+        "Supporting user acceptance testing and bug fixing for the deliverables.",
+        "Participating in knowledge sharing sessions."
+      ],
+      "toolsandtech": ["C", "C++", "Objective C", "iPhone SDK", "OpenGL ES 1.1"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Calcutta Institute of Engineering & Management",
+      "area": "Computer Science & Engineering",
+      "studyType": "B-Tech",
+      "startDate": "2004-04-01",
+      "endDate": "2008-03-31",
+      "grade": "8.08 DGPA"
+    }
+  ],
+  "achivements": [
+    "Ranked 1st as a team in a proof of concept implementation in a hackathon context in 2018 when working for the US based travel domain company.",
+    "Received Feather in my cap (Highest Award inside Wipro for individual contribution) award for outstanding performance in 2012.",
+    "Developed an OpenGL ES based iPhone game which was showcased in London Toy Fair 2010.",
+    "Sun Certified Java Programmer (1.4) (2009)",
+    "Successfully completed Part Time post Graduate Course in Software Engineering from DOEACC. [http://www.nielit.gov.in/ ]",
+    "Certificate in Network Management from Novell India."
+  ],
+  "skills": [
+    {
+      "type": "Languages",
+      "description": "Java8, Node JS, JSP-Servlets, Spring 4.XX, Struts 1.X, JavaScript, CSS, CSS3, HTML, HTML5, Shell-script (KSH, BASH), XML, XSL, SQL, Apache Rewrites, Objective C, Mainframe Focus."
+    },
+    {
+      "type": "Database",
+      "description": "DB2, MySQL, Postgress & MongoDB, Datastax Cassandra."
+    },
+    { "type": "IDE", "description": "Intelij, Eclipse, Netbeans" },
+    {
+      "type": "Virtualization & Containerization",
+      "description": "Vagrant, Virtual Box, Docker"
+    },
+    {
+      "type": "Operating Systems",
+      "description": "Windows 98/2000/XP/7/8/10, DOS 6.0, Linux (Ubuntu & Red Hat), Mac OSX (High Sierra), Unix"
+    },
+    {
+      "type": "JavaScript Library",
+      "description": "Angular 2+, Angular JS, jQuery 2.X, Mootools"
+    },
+    { "type": "CSS Library", "description": "Bootstrap" },
+    {
+      "type": "Project Management",
+      "description": "Understanding of Agile, Waterfall way of project management."
+    }
+  ]
+}

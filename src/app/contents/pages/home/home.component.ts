@@ -1,11 +1,12 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
+
   public skillSet: string[] = [
     'Java 8',
     'Spring Boot',
@@ -24,8 +25,6 @@ export class HomeComponent implements AfterViewInit {
     'Microservices'
   ];
   constructor() {}
-
-  ngAfterViewInit() {}
 
   public getSkillSets(): string[] {
     return this.skillSet;
