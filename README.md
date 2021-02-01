@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ng build --prod --base-href https://saptarshidebnath.com
-ngh -no-silent --dir dist/saptarshidebnath
+ngh -no-silent --dir dist/saptarshidebnath -c saptarshidebnath.com
