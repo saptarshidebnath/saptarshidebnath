@@ -1,10 +1,24 @@
-<section id="navigation">
-    <div class="icon">
-        <P>SD</P>
+<nav id="sitenav" class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" routerLink="/">SD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        [attr.data-target]="'#'+navigatorLinkContentElementId" [attr.aria-controls]="navigatorLinkContentElementId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="{{navigatorLinkContentElementId}}">
+        <ul class="nav justify-content-center ">
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleMenu()" [routerLinkActiveOptions]="{exact:true}"
+                    routerLinkActive="activelink" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleMenu()" [routerLinkActiveOptions]="{exact:
+                    true}" routerLinkActive="activelink" routerLink="/resume">Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/saptarshidebnath/" target="_linkedin">Linkedin</a>
+            </li>
+        </ul>
     </div>
-    <div class="menu">
-        <div><a href="/">Home </a></div>
-        <div><a href="/resume">Resume </a></div>
-        <div><a href="https://www.linkedin.com/in/saptarshidebnath/" target="_linkedin">Linkedin</a></div>
-    </div>
-</section>
+</nav>

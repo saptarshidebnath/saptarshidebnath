@@ -1,34 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap");
 
-section#navigation {
-    font-size: 1.5em;
-    color: brown;
-    display: flex;
-    flex-direction: column;
-    div.icon {
+nav#sitenav {
+    a.navbar-brand {
+        font-family: "Lobster Two", cursive;
+        font-size: 3em;
         font-weight: bold;
-        p {
-            font-family: "Lobster Two", cursive;
-            text-align: center;
-            margin: 0;
-            font-size: 2em;
-            padding: 0;
-            margin: 0;
-        }
-        margin: 0;
-        padding: 0;
+        color: #3c3342;
+        text-shadow: 5px 5px 5px #634747;
     }
-    div.menu {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        div {
-            margin: 1vh 1vw;
-            font-weight: bold;
-
+    a.activelink {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    div#navbarSupportedContent {
+        ul > li > a {
+            font-size: 1.5em;
+            color: rgb(28, 15, 102);
         }
     }
 }

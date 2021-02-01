@@ -4,17 +4,15 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-
 //Default is mobile
 
 section.page-home {
-    margin-top: 15vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    div{
-        // text-align: center;
+    div {
         h1.banner-text {
             font-family: "Pacifico", cursive;
             font-size: 5em;
@@ -27,19 +25,17 @@ section.page-home {
             text-align: center;
         }
     }
-    
 }
 
-@include media-breakpoint-up(md) { 
-
+@include media-breakpoint-up(md) {
     section.page-home {
-        div{
+        div {
             h1.banner-text {
                 font-size: 9em;
             }
             p.banner-intro {
                 font-size: 1.5em;
             }
-        }        
+        }
     }
 }
