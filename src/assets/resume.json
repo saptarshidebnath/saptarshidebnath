@@ -1,0 +1,40 @@
+{
+    "name": {
+        "firstName": {
+            "label": "First Name",
+            "data": "Saptarshi"
+        },
+        "lastName": {
+            "label": "Last Name",
+            "data": "Debnath"
+        }
+    },
+    "headLine": {
+        "label": "Head Line",
+        "data": "Full Stack Java Developer Architect | Java 8 | Asynchornous Microservice"
+    },
+    "contact": [
+        {
+            "type": "email",
+            "label": "Email",
+            "data": "sapdeb@saptarshidebnath.com"
+        },
+        {
+            "type": "phone",
+            "label": "Phone",
+            "data": "+1(973) 348-5557"
+        }
+    ],
+    "social": [
+        {
+            "type": "linkedin",
+            "label": "Linkedin",
+            "data": "https://www.linkedin.com/in/saptarshidebnath/"
+        },
+        {
+            "type": "github",
+            "label": "Linkedin",
+            "data": "https://www.linkedin.com/in/saptarshidebnath/"
+        }
+    ]
+}
