@@ -1,11 +1,21 @@
 <section class="resume container">
-    <section class="header text-left">
+    <section class="header text-center">
         <h1>{{this?.resume?.name?.firstName?.data}} {{this?.resume?.name?.lastName?.data}}</h1>
         <h5>{{this?.resume?.headLine?.data}}</h5>
-        <section class="contact" *ngIf="displayPi()">
-            <section  *ngFor="let column of this?.resume?.contact; let in = index" >
-                <i class="{{column.type}}"></i> <span>{{column.data}}</span>
+        <section class="section-divider contact row justify-content-md-center" *ngIf="displayPI()">
+            <section *ngFor="let column of this?.resume?.contact; let in = index">
+                <span class="col-sm-2 mx-1 contact-entry {{column.type}}"><span class="label" ><i class="bi bi-{{column?.icon}}"></i> </span> {{column?.data}}</span>
             </section>
         </section>
     </section>
+    <section class="body row justify-content-md-center section-divider summary">
+        <section class="col-sm-10 summary justify-content-md-center ">
+            <h4 class="text-center header">Summary</h4>
+            <hr/>
+            <ul class="" *ngFor="let column of this?.resume?.summary; let in = index">
+                <li class="summary-entry">{{column}}</li>
+            </ul>
+        </section>
+    </section>
+
 </section>

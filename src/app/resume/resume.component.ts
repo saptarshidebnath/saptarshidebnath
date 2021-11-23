@@ -19,8 +19,8 @@ export class ResumeComponent implements OnInit {
     })
   }
 
-  displayPi(): boolean{
-    return false;
+  displayPI(): boolean{
+    return true;
   }
 
 
