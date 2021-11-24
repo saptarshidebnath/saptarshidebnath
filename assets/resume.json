@@ -11,30 +11,107 @@
     },
     "headLine": {
         "label": "Head Line",
-        "data": "Full Stack Java Developer Architect | Java 8 | Asynchornous Microservice"
+        "data": "Technical Architect | Java 8 / 11 | Asynchornous/Reactive Programming"
     },
     "contact": [
         {
             "type": "email",
+            "icon": "envelope-check",
             "label": "Email",
-            "data": "sapdeb@saptarshidebnath.com"
+            "data": "mailme@saptarshidebnath.com"
         },
         {
             "type": "phone",
-            "label": "Phone",
+            "icon": "phone",
+            "label": "Mobile",
             "data": "+1(973) 348-5557"
+        },
+        {
+            "type": "address",
+            "icon": "pin-map",
+            "label": "Location",
+            "data": "Greater Washington DC"
         }
     ],
     "social": [
         {
             "type": "linkedin",
+            "icon": "envelope-check",
             "label": "Linkedin",
             "data": "https://www.linkedin.com/in/saptarshidebnath/"
         },
         {
             "type": "github",
-            "label": "Linkedin",
-            "data": "https://www.linkedin.com/in/saptarshidebnath/"
+            "icon": "envelope-check",
+            "label": "Github",
+            "data": "https://github.com/saptarshidebnath"
+        }
+    ],
+    "summary": [
+        "12 years of experience in Java based enterprise software design and developement",
+        "Extensive hands on and designing experience in Java 8/11 , Asynchronous programming, Play Akka, Spring Boot & WebFlux",
+        "Good understanding of the full stack engineering technologies like Angular, CSS3, bootstrap, bash, git, svn, DevOps principles etc"
+    ],
+    "skills": [
+        {
+            "skill_type": "Programming Style",
+            "data": [
+                "Asynchronous programming",
+                "Impertative Programming",
+                "Functional Programming"
+            ]
+        },
+        {
+            "skill_type": "Languages",
+            "data": [
+                "Java 8 & 11",
+                "Node Js",
+                "vanilla javscript",
+                "CSS3",
+                "typescript",
+                "HTML5",
+                "SCSS",
+                "Shell Scripts (bash)"
+            ]
+        },
+        {
+            "skill_type": "Major Libaries & Framework",
+            "data": [
+                "Play 2.6.X",
+                "Play/Akka",
+                "Spring 5",
+                "Spring Boot 2",
+                "WebFlux",
+                "bootstrap 5",
+                "Angular 2+",
+                "jQuery 3"
+            ]
+        },
+        {
+            "skill_type": "Database",
+            "data": [
+                "Couchbase",
+                "DB2",
+                "MySQL 5",
+                "PostGress SQL",
+                "Datastax Cassandra"
+            ]
+        },
+        {
+            "skill_type": "OS & Virtualization",
+            "data": [
+                "Windows",
+                "Linux",
+                "Vagrant",
+                "Virtualbox"
+            ]
+        },
+        {
+            "skill_type": "Project Management",
+            "data": [
+                "Agile",
+                "Waterfall"
+            ]
         }
     ]
 }
