@@ -4,18 +4,31 @@
         <h5>{{this?.resume?.headLine?.data}}</h5>
         <section class="section-divider contact row justify-content-md-center" *ngIf="displayPI()">
             <section *ngFor="let column of this?.resume?.contact; let in = index">
-                <span class="col-sm-2 mx-1 contact-entry {{column.type}}"><span class="label" ><i class="bi bi-{{column?.icon}}"></i> </span> {{column?.data}}</span>
+                <span class="col-sm-2 mx-1 contact-entry {{column.type}}"><span class="label"><i
+                            class="bi bi-{{column?.icon}}"></i> </span> {{column?.data}}</span>
             </section>
         </section>
     </section>
     <section class="body row justify-content-md-center section-divider summary">
-        <section class="col-sm-10 summary justify-content-md-center ">
+        <section class="summary justify-content-md-center ">
             <h4 class="text-center header">Summary</h4>
-            <hr/>
-            <ul class="" *ngFor="let column of this?.resume?.summary; let in = index">
-                <li class="summary-entry">{{column}}</li>
+            <hr />
+            <ul>
+                <li *ngFor="let column of this?.resume?.summary; let in = index" class="summary-entry mb-0">{{column}}</li>
             </ul>
         </section>
+        <section class="skill-sets justify-content-md-center section-divider">
+            <h4 class="text-center header">Skill Set</h4>
+            <hr />
+            <section class="skill-set-container row justify-content-md-center">
+                <section class="justify-content-md-center col-sm-4 skill-set-module my-1"
+                    *ngFor="let column of this?.resume?.skills; let in = index">
+                    <div>
+                        <p class="header text-center my-1 background-shadow">{{column.skill_type}}</p>
+                        <p class="text-center body">{{column.data.join(', ')}} </p>
+                    </div>
+                </section>
+            </section>
+        </section>
     </section>
-
 </section>

@@ -54,7 +54,7 @@
     ],
     "skills": [
         {
-            "skill-type": "Programming Style",
+            "skill_type": "Programming Style",
             "data": [
                 "Asynchronous programming",
                 "Impertative Programming",
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "skill-type": "Languages",
+            "skill_type": "Languages",
             "data": [
                 "Java 8 & 11",
                 "Node Js",
@@ -75,7 +75,7 @@
             ]
         },
         {
-            "skill-type": "Major Libaries & Framework",
+            "skill_type": "Major Libaries & Framework",
             "data": [
                 "Play 2.6.X",
                 "Play/Akka",
@@ -84,11 +84,11 @@
                 "WebFlux",
                 "bootstrap 5",
                 "Angular 2+",
-                "jQuery"
+                "jQuery 3"
             ]
         },
         {
-            "skill-type": "Database",
+            "skill_type": "Database",
             "data": [
                 "Couchbase",
                 "DB2",
@@ -98,7 +98,7 @@
             ]
         },
         {
-            "skill-type": "OS & Virtualization",
+            "skill_type": "OS & Virtualization",
             "data": [
                 "Windows",
                 "Linux",
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "skill-type": "Understanding Project Management",
+            "skill_type": "Project Management",
             "data": [
                 "Agile",
                 "Waterfall"

@@ -20,6 +20,18 @@ section.resume {
             }
             // background-color: red;
         }
+        .skill-sets{
+            .skill-set-container{
+                .skill-set-module{
+                    
+                    .header{
+                        @extend .rounded;
+                        background-color: rgba(255, 60, 0, 0.1);
+                                    // background-color: red;
+                    }
+                }
+            }
+        }
     }
 }
 
