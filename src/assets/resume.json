@@ -9,42 +9,37 @@
             "data": "Debnath"
         }
     },
-    "headLine": {
-        "label": "Head Line",
-        "data": "Technical Architect | Java 8 / 11 | Asynchornous/Reactive Programming"
-    },
+    "head_line": "Technical Architect working with Reactive Programming using Java 8 and 11",
     "contact": [
         {
             "type": "email",
             "icon": "envelope-check",
-            "label": "Email",
+            "href" : "mailto:mailme@saptarshidebnath.com",
             "data": "mailme@saptarshidebnath.com"
         },
         {
             "type": "phone",
             "icon": "phone",
-            "label": "Mobile",
+            "href" : "tel: +19733485557",
             "data": "+1(973) 348-5557"
         },
         {
             "type": "address",
             "icon": "pin-map",
-            "label": "Location",
-            "data": "Greater Washington DC"
+            "href" : "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
+            "data": "Greater Washington DC (Bethesda)"
         }
     ],
     "social": [
         {
-            "type": "linkedin",
-            "icon": "envelope-check",
-            "label": "Linkedin",
-            "data": "https://www.linkedin.com/in/saptarshidebnath/"
+            "icon": "linkedin",
+            "data": "in/saptarshidebnath/",
+            "href": "https://www.linkedin.com/in/saptarshidebnath/"
         },
         {
-            "type": "github",
-            "icon": "envelope-check",
-            "label": "Github",
-            "data": "https://github.com/saptarshidebnath"
+            "icon": "github",
+            "data": "saptarshidebnath",
+            "href": "https://github.com/saptarshidebnath"
         }
     ],
     "summary": [
@@ -112,6 +107,21 @@
                 "Agile",
                 "Waterfall"
             ]
+        }
+    ],
+    "work_experience": [
+        {
+            "position": "Technical Manager",
+            "employer": "Mindtree Ltd",
+            "account_description": "The end client is a behemoth in travel domain and part of the S&P 500 index",
+            "start_date": "07/01/2021",
+            "end_date": "",
+            "is_current": true,
+            "work_location": {
+                "data" : "Bethesda",
+                "href" : "https://goo.gl/maps/ZTHWWRuyabS8EjmeA"
+            }     
+            
         }
     ]
 }

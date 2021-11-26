@@ -7,33 +7,31 @@
     text-shadow: 1px 1px 3px #8a6d6d;
  }
 
-section.resume {
-    section.header{
-        h1, h5{
-            @include textShadow;
-        }
-    }
-    section.body{
-        .summary{
-            .header{
-                @include textShadow;
-            }
-            // background-color: red;
-        }
-        .skill-sets{
-            .skill-set-container{
-                .skill-set-module{
-                    
-                    .header{
-                        @extend .rounded;
-                        background-color: rgba(255, 60, 0, 0.1);
-                                    // background-color: red;
-                    }
-                }
-            }
-        }
-    }
-}
+// section.resume {
+//     section.header{
+//         h1, h5{
+//             @include textShadow;
+//         }
+//     }
+//     section.body-summary{
+//         .summary{
+//             .header{
+//                 @include textShadow;
+//             }
+//             // background-color: red;
+//         }
+//         .skill-sets{
+//             .skill-set-container{
+//                 .skill-set-module{
+//                     .header{
+//                         @include textShadow;
+//                         text-decoration: underline;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 hr{
