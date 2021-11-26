@@ -14,19 +14,19 @@
         {
             "type": "email",
             "icon": "envelope-check",
-            "href" : "mailto:mailme@saptarshidebnath.com",
+            "href": "mailto:mailme@saptarshidebnath.com",
             "data": "mailme@saptarshidebnath.com"
         },
         {
             "type": "phone",
             "icon": "phone",
-            "href" : "tel: +19733485557",
+            "href": "tel: +19733485557",
             "data": "+1(973) 348-5557"
         },
         {
             "type": "address",
             "icon": "pin-map",
-            "href" : "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
+            "href": "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
             "data": "Greater Washington DC (Bethesda)"
         }
     ],
@@ -111,17 +111,27 @@
     ],
     "work_experience": [
         {
-            "position": "Technical Manager",
-            "employer": "Mindtree Ltd",
+            "position": "Technical Architect",
+            "employer": {
+                "data": "Mindtree Ltd",
+                "label": "Mindtree Ltd",
+                "href": "https://www.mindtree.com/"
+            },
             "account_description": "The end client is a behemoth in travel domain and part of the S&P 500 index",
-            "start_date": "07/01/2021",
-            "end_date": "",
-            "is_current": true,
+            "work_date": {
+                "start_date": "07/01/2021",
+                "end_date": "Present"
+            },
             "work_location": {
-                "data" : "Bethesda",
-                "href" : "https://goo.gl/maps/ZTHWWRuyabS8EjmeA"
-            }     
-            
+                "data": "Bethesda",
+                "href": "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
+                "icon": "pin-map"
+            },
+            "experience_summary": [
+                "Worked with and lead a team of 7 people in offshore and on-shore model.",
+                "Designed and implemented new RESTFul microservices. These microservices were able serve with a very high TPS to CPU core count ratio.",
+                "Re-designed and re-wrote monolith applications to multiple microservices using Play/Akka , WebFlux and other Asycn technologies. This resulted in better resource utlization and modernization of clients tech stack"
+            ]
         }
     ]
 }
