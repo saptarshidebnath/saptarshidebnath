@@ -38,9 +38,45 @@
                 </ul>
             </div>
         </section>
+        <section class="work-experience justify-content-md-center container">
+            <div class="row">
+                <h4 class="text-center header background-shadow col-sm-12">Work Experience</h4>
+            </div>
+            <div class="row">
+                <hr />
+            </div>
+            <div class="row">
+                <section class="experience_info container"
+                    *ngFor="let column of this?.resume?.work_experience; let in = index">
+                    <div class="row">
+                        <h5 class="mb-0 primary-color"><b>{{column?.position}}</b>
+                            , <a href="{{column?.employer?.href}}" target="_blank">
+                                {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i>
+                        </h5>
+                    </div>
+                    <div class="row text-muted">
+                        <p class="work-location">
+                            {{column?.account_description}} ,
+                            <i class="bi bi-{{column?.work_location?.icon}}"></i><a
+                                href="{{column?.work_location?.href}}" target="_blank">
+                                {{column?.work_location?.data}}</a><i class="bi bi-link-45deg"></i>
+                            , <span class="work-timeline"><u>{{column?.work_date?.start_date}} -
+                                    {{column?.work_date?.end_date}}</u></span>
+                        </p>
+                    </div>
+                    <div class="row col-sm-12">
+                        <p class="lead"> {{column?.project_desc}} </p>
+                    </div>
+                    <ul class="row col-sm-12">
+                        <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">
+                            {{experiece_summary}}</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
         <section class="skill-sets justify-content-md-center container">
             <div class="row">
-                <h4 class="text-center header background-shadow col-sm-12">Skill Set</h4>
+                <h4 class="text-center header background-shadow col-sm-12">Primary Skill Set</h4>
             </div>
             <div class="row">
                 <hr />
@@ -54,37 +90,6 @@
                             <p class="text-center body">{{column.data.join(', ')}} </p>
                         </div>
                     </section>
-                </section>
-            </div>
-        </section>
-        <section class="work-experience justify-content-md-center container">
-            <div class="row">
-                <h4 class="text-center header background-shadow col-sm-12">Work Experience</h4>
-            </div>
-            <div class="row">
-                <hr />
-            </div>
-            <div class="row">
-                <section class="experience_info container"
-                    *ngFor="let column of this?.resume?.work_experience; let in = index">
-                    <div class="row ">
-                        <h5 class="col-sm-6 mb-0">{{column?.position}}</h5>
-                        <p class="col-sm-6 text-right mb-0"><a href="{{column?.employer?.href}}" target="_blank">
-                                {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i></p>
-                    </div>
-                    <div class="row">
-                        <p class="col-sm-6 text-left work-location">
-                            <i class="bi bi-{{column?.work_location?.icon}}"></i><a
-                                href="{{column?.work_location?.href}}" target="_blank">
-                                {{column?.work_location?.data}}</a><i class="bi bi-link-45deg"></i>
-                        </p>
-                        <p class="col-sm-6 text-right work-location" *ngFor="let column of this?.resume?.work_experience; let in = index">
-                            <u>{{column?.work_date?.start_date}} - {{column?.work_date?.end_date}}</u>
-                        </p>
-                    </div>
-                    <ul class="row col-sm-12">
-                        <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">{{experiece_summary}}</li>
-                    </ul>
                 </section>
             </div>
         </section>

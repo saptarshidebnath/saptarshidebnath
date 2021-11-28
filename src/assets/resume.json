@@ -117,7 +117,7 @@
                 "label": "Mindtree Ltd",
                 "href": "https://www.mindtree.com/"
             },
-            "account_description": "The end client is a behemoth in travel domain and part of the S&P 500 index",
+            "account_description": "Travel domain giant selling hotel nights",
             "work_date": {
                 "start_date": "07/01/2021",
                 "end_date": "Present"
@@ -127,10 +127,14 @@
                 "href": "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
                 "icon": "pin-map"
             },
+            "project_desc" : "The project was handling the enterprise level api. The team would expose webservices which would be consumed in the enterprise grade. My primary job is to do design and development & performance tuning for new changes over the current API stack.",
             "experience_summary": [
                 "Worked with and lead a team of 7 people in offshore and on-shore model.",
                 "Designed and implemented new RESTFul microservices. These microservices were able serve with a very high TPS to CPU core count ratio.",
-                "Re-designed and re-wrote monolith applications to multiple microservices using Play/Akka , WebFlux and other Asycn technologies. This resulted in better resource utlization and modernization of clients tech stack"
+                "Re-designed and re-wrote monolith applications to multiple microservices using Play/Akka , WebFlux and other Asycn technologies. This resulted in better computing resource utlization and modernization of clients tech stack"
+            ],
+            "technology" : [
+                "Java 8/11", "Asynchronous Programming", "Play/Akka 2.6.X", "Spring Boot", "Spring WebFlux", "Git", "Jenkins" , "Shell Scripting"
             ]
         }
     ]
