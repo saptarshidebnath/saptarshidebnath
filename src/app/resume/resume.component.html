@@ -12,12 +12,14 @@
         <section class="contact row justify-content-md-center col-sm-12" *ngIf="displayPI()">
             <section *ngFor="let column of this?.resume?.contact; let in = index">
                 <span class="col-sm-2 mx-1 contact-entry {{column.type}}"><span class="label"><i
-                            class="bi bi-{{column?.icon}}"></i> </span> <a href="{{column.href}}" target="_blank">
+                            class="bi bi-{{column?.icon}}"></i> </span> <a href="{{column.href}}" target="_blank"
+                        data-toggle="tooltip" data-placement="top" title="{{column?.data}}">
                         {{column?.data}}</a><i class="bi bi-link-45deg"></i></span>
             </section>
             <section *ngFor="let column of this?.resume?.social; let in = index">
                 <span class="col-sm-2 mx-1 contact-entry {{column.type}}"><span class="label"><i
-                            class="bi bi-{{column?.icon}} mx-1"></i> </span> <a href="{{column.href}}" target="_blank">
+                            class="bi bi-{{column?.icon}} mx-1"></i> </span> <a href="{{column.href}}" target="_blank"
+                        data-toggle="tooltip" data-placement="top" title="{{column?.data}}">
                         {{column?.data}}</a><i class="bi bi-link-45deg"></i></span>
             </section>
         </section>
@@ -50,7 +52,8 @@
                     *ngFor="let column of this?.resume?.work_experience; let in = index">
                     <div class="row">
                         <h5 class="mb-0 primary-color"><b>{{column?.position}}</b>
-                            , <a href="{{column?.employer?.href}}" target="_blank">
+                            , <a href="{{column?.employer?.href}}" target="_blank" data-toggle="tooltip"
+                                data-placement="top" title="{{column?.employer?.data}}">
                                 {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i>
                         </h5>
                     </div>
@@ -58,7 +61,8 @@
                         <p class="work-location">
                             {{column?.account_description}} ,
                             <i class="bi bi-{{column?.work_location?.icon}}"></i><a
-                                href="{{column?.work_location?.href}}" target="_blank">
+                                href="{{column?.work_location?.href}}" target="_blank" data-toggle="tooltip"
+                                data-placement="top" title="{{column?.work_location?.data}}">
                                 {{column?.work_location?.data}}</a><i class="bi bi-link-45deg"></i>
                             , <span class="work-timeline"><u>{{column?.work_date?.start_date}} -
                                     {{column?.work_date?.end_date}}</u></span>
@@ -71,6 +75,7 @@
                         <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">
                             {{experiece_summary}}</li>
                     </ul>
+
                 </section>
             </div>
         </section>
