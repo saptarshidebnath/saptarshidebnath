@@ -111,15 +111,15 @@
     ],
     "work_experience": [
         {
-            "position": "Technical Architect",
+            "position": "Technical Architect / Lead",
             "employer": {
                 "data": "Mindtree Ltd",
                 "label": "Mindtree Ltd",
                 "href": "https://www.mindtree.com/"
             },
-            "account_description": "The end client is a behemoth in travel domain and part of the S&P 500 index",
+            "account_description": "Travel domain giant selling hotel nights",
             "work_date": {
-                "start_date": "07/01/2021",
+                "start_date": "01/01/2019",
                 "end_date": "Present"
             },
             "work_location": {
@@ -127,10 +127,69 @@
                 "href": "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
                 "icon": "pin-map"
             },
+            "project_desc": "The project was handling the enterprise level api. The team would expose webservices which would be consumed in the enterprise grade. My primary job is to do design and development & performance tuning for new changes over the current API stack.",
             "experience_summary": [
                 "Worked with and lead a team of 7 people in offshore and on-shore model.",
                 "Designed and implemented new RESTFul microservices. These microservices were able serve with a very high TPS to CPU core count ratio.",
-                "Re-designed and re-wrote monolith applications to multiple microservices using Play/Akka , WebFlux and other Asycn technologies. This resulted in better resource utlization and modernization of clients tech stack"
+                "Re-designed and re-wrote monolith applications to multiple microservices using Play/Akka , WebFlux and other Asycn technologies. This resulted in better computing resource utlization and modernization of clients tech stack"
+            ],
+            "technology": [
+                "Java 8/11",
+                "Asynchronous Programming",
+                "Play/Akka 2.6.X",
+                "Spring Boot 2.X.X",
+                "Spring WebFlux",
+                "Couchbase",
+                "Git",
+                "Jenkins",
+                "Red Hat OpenShift",
+                "Shell Scripting"
+            ]
+        },
+        {
+            "position": "Technical Lead",
+            "employer": {
+                "data": "Mindtree Ltd",
+                "label": "Mindtree Ltd",
+                "href": "https://www.mindtree.com/"
+            },
+            "account_description": "Amex GBT",
+            "work_date": {
+                "start_date": "09/01/2017",
+                "end_date": "12/31/2018"
+            },
+            "work_location": {
+                "data": "Scottsdale AZ",
+                "href": "https://goo.gl/maps/ivgaqJEwiLqMq4vt5",
+                "icon": "pin-map"
+            },
+            "project_desc": "As part of this connect portal project, my  job was to enhance and maintain a travel website. The travel website was being developed using microservice architecture. There were a total of 8 services that collates the user’s profile and trip information from various external systems and display all of them in a single page application.",
+            "experience_summary": [
+                "Understanding  and analysis of business requirements.  Transformation  of the  requirement  to  a User Case and User Stories.",
+                "Estimation of user stories and effort  required  to  develop  business logic.",
+                "Enhancement  and maintenance (including test cases) of the website and relevant microservices.",
+                "Keeping the microservices and assorted services up and running  in the lower  environments.",
+                "Review of peer’s deliverables including code and documentation.",
+                "Writing automatic  test cases using selenium and Jenkins.",
+                "Deployment  of application to  different  environment  like DEV, QA PROD."
+            ],
+            "technology": [
+                "Java 8",
+                "Spring  Boot 141",
+                "ActiveMQ",
+                "Red Hat OpenShift",
+                "Jenkins",
+                "Docker",
+                "MySQL 5",
+                "Datastax Cassandra",
+                "Postgress SQL",
+                "Redis",
+                "Angular 2",
+                "HTML5",
+                "Typescript",
+                "CSS3",
+                "bootstrap",
+                "Shell scripting"
             ]
         }
     ]
