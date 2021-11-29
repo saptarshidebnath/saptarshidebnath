@@ -47,8 +47,8 @@
             <div class="row">
                 <hr />
             </div>
-            <div class="row">
-                <section class="experience_info container"
+            <div class="container mb-2">
+                <section class="container experience_info container mb-5"
                     *ngFor="let column of this?.resume?.work_experience; let in = index">
                     <div class="row">
                         <h5 class="mb-0 primary-color"><b>{{column?.position}}</b>
@@ -57,7 +57,7 @@
                                 {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i>
                         </h5>
                     </div>
-                    <div class="row text-muted">
+                    <div class="row">
                         <p class="work-location">
                             {{column?.account_description}} ,
                             <i class="bi bi-{{column?.work_location?.icon}}"></i><a
@@ -68,14 +68,21 @@
                                     {{column?.work_date?.end_date}}</u></span>
                         </p>
                     </div>
-                    <div class="row col-sm-12">
+                    <div class="row">
                         <p class="lead"> {{column?.project_desc}} </p>
                     </div>
-                    <ul class="row col-sm-12">
-                        <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">
-                            {{experiece_summary}}</li>
-                    </ul>
+                    <div class="container">
+                        <p class="row lead background-shadow mb-0 pb-0">Summary :</p>
+                        <ul class="row">
+                            <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">
+                                {{experiece_summary}}</li>
+                        </ul>
+                    </div>
 
+                    <div class="container">
+                        <p class="row lead background-shadow">Technologies :</p>
+                        <p class="row">{{column.technology.join(', ')}}</p>
+                    </div>
                 </section>
             </div>
         </section>

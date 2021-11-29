@@ -23,5 +23,4 @@ export class ResumeComponent implements OnInit {
     return true;
   }
 
-
 }
