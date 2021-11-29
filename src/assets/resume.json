@@ -127,7 +127,7 @@
                 "href": "https://goo.gl/maps/ZTHWWRuyabS8EjmeA",
                 "icon": "pin-map"
             },
-            "project_desc": "The project was handling the enterprise level api. The team would expose webservices which would be consumed in the enterprise grade. My primary job is to do design and development & performance tuning for new changes over the current API stack.",
+            "project_desc": "The project was handling the enterprise level api. The team would expose web services which would be consumed in the enterprise grade. My primary job is to do design and development & performance tuning for new changes over the current API stack.",
             "experience_summary": [
                 "Worked with and lead a team of 7 people in offshore and on-shore model.",
                 "Designed and implemented new RESTFul microservices. These microservices were able serve with a very high TPS to CPU core count ratio.",
@@ -135,6 +135,7 @@
             ],
             "technology": [
                 "Java 8/11",
+                "Cucumber/Gherkin",
                 "Asynchronous Programming",
                 "Play/Akka 2.6.X",
                 "Spring Boot 2.X.X",
@@ -160,15 +161,15 @@
             },
             "work_location": {
                 "data": "Scottsdale AZ",
-                "href": "https://goo.gl/maps/ivgaqJEwiLqMq4vt5",
+                "href": "https://goo.gl/maps/WK6su2hTrysa8GqWA",
                 "icon": "pin-map"
             },
             "project_desc": "As part of this connect portal project, my  job was to enhance and maintain a travel website. The travel website was being developed using microservice architecture. There were a total of 8 services that collates the user’s profile and trip information from various external systems and display all of them in a single page application.",
             "experience_summary": [
                 "Understanding  and analysis of business requirements.  Transformation  of the  requirement  to  a User Case and User Stories.",
                 "Estimation of user stories and effort  required  to  develop  business logic.",
-                "Enhancement  and maintenance (including test cases) of the website and relevant microservices.",
-                "Keeping the microservices and assorted services up and running  in the lower  environments.",
+                "Enhancement  and maintenance (including test cases) of the website and relevant microservice.",
+                "Keeping the microservice and assorted services up and running  in the lower  environments.",
                 "Review of peer’s deliverables including code and documentation.",
                 "Writing automatic  test cases using selenium and Jenkins.",
                 "Deployment  of application to  different  environment  like DEV, QA PROD."
@@ -190,6 +191,109 @@
                 "CSS3",
                 "bootstrap",
                 "Shell scripting"
+            ]
+        },
+        {
+            "position": "Senior Software Engineer",
+            "employer": {
+                "data": "Wipro Technologies",
+                "label": "Wipro Technologies",
+                "href": "https://www.wipro.com/"
+            },
+            "account_description": "Capital One",
+            "work_date": {
+                "start_date": "10/01/2015",
+                "end_date": "08/31/2017"
+            },
+            "work_location": {
+                "data": "Richmond VA",
+                "href": "https://goo.gl/maps/ZoXxLSfNkBCnfiwU7",
+                "icon": "pin-map"
+            },
+            "project_desc": "I was working as a Senior Software Engineer as part of the Data Services System Team. I have worked on multiple small sub projects which would be utilized by the other team members of the Data Services team",
+            "experience_summary": [
+                "Worked on setup of a offline virtual development environment which would setup a virtual machine on demand to be used by the developer for a specific work scenario.",
+                "Maintenance of UI based test job testing system. It would trigger a test job in a remote system over SSH and SFTP",
+                "AMI certification was a project to certify custom AWS AMI images for their stability. The test cases were written in Java 8 and Cucumber/Gherkin and the automation was done using Jenkins and AWS cli",
+                "Software Intake Form was angularJs application with spring MVC backend to request intake of new software in the ecosystem. It would also test the environment automatically once the manual steps are completed. It would check the system for stability against a set of test cases. Last and not the least the application would also report the test data to the front end."
+            ],
+            "technology": [
+                "Java 8",
+                "Shell Scripting",
+                "Oracle Virtual Box",
+                "Vagrant",
+                "Git",
+                "Spring MVC",
+                "HTML5",
+                "Angular JS",
+                "Bootstrap",
+                "MongoDB",
+                "Node JS",
+                "Cucumber/Gherkin"
+            ]
+        },
+        {
+            "position": "Senior Software Engineer / Software Engineer",
+            "employer": {
+                "data": "Wipro Technologies",
+                "label": "Wipro Technologies",
+                "href": "https://www.wipro.com/"
+            },
+            "account_description": "Novartis",
+            "work_date": {
+                "start_date": "08/31/2017",
+                "end_date": "11/01/2011"
+            },
+            "work_location": {
+                "data": "East Hanover",
+                "href": "https://goo.gl/maps/Psip7W9EiZ5QxB6N7",
+                "icon": "pin-map"
+            },
+            "project_desc": "Novartis is a Swiss Multinational pharmaceutical behemoth. The brand site oncology project dealt with development and maintenance of around 40 US specific branded or un-branded (by drug) e-marketing  website.",
+            "experience_summary": [
+                "The websites are built on top of a framework  proprietary  to the client (Uses Struts 1.x as the base). This project involved both fresh development and maintenance of existing websites.",
+                "I have worked  both  in development section and the maintenance team. I came to US as part of this project.",
+                "At US I was working as the onsite coordinator / Team Lead for the maintenance team engaged for this project."
+            ],
+            "technology": [
+                "JSP-Servlet",
+                "Java 1.7",
+                "HTML5",
+                "CSS2",
+                "CSS3",
+                "Vanilla java scripts",
+                "jQuery",
+                "Mootools"
+            ]
+        },
+        {
+            "position": "Software Engineer",
+            "employer": {
+                "data": "Wipro Technologies",
+                "label": "Wipro Technologies",
+                "href": "https://www.wipro.com/"
+            },
+            "account_description": "Bank Of New York Mellon",
+            "work_date": {
+                "start_date": "09/22/2009",
+                "end_date": "10/31/2011"
+            },
+            "work_location": {
+                "data": "Bangalore",
+                "href": "https://goo.gl/maps/d9tkcAEgLxiuqscv6",
+                "icon": "pin-map"
+            },
+            "project_desc": "Bank of New York Melon is a highly successful Custodian Bank across globe. The Custom Reporting is a Mainframe / ETL / Actuate project. The objective of this project was to generate highly customized  reports  and transmitting them from bank's  infrastructure to its clients and vice versa.",
+            "experience_summary": [
+                "This project is about development and enhancements to the existing Custom Reports as specified by the customer.",
+                "The reports were written in Mainframe FOCUS which is a 4th Generation language similar to SQL."
+            ],
+            "technology": [
+                "Mainframe FOCUS",
+                "Actuate eRD Pro",
+                "DB2",
+                "VSAM",
+                "JCL"
             ]
         }
     ]

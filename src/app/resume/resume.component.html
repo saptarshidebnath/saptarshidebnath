@@ -51,7 +51,7 @@
                 <section class="container experience_info container mb-5"
                     *ngFor="let column of this?.resume?.work_experience; let in = index">
                     <div class="row">
-                        <h5 class="mb-0 primary-color"><b>{{column?.position}}</b>
+                        <h5 class="mb-0 primary-color background-shadow"><b>{{column?.position}}</b>
                             , <a href="{{column?.employer?.href}}" target="_blank" data-toggle="tooltip"
                                 data-placement="top" title="{{column?.employer?.data}}">
                                 {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i>
@@ -74,13 +74,13 @@
                     <div class="container">
                         <p class="row lead background-shadow mb-0 pb-0">Summary :</p>
                         <ul class="row">
-                            <li *ngFor="let experiece_summary of column?.experience_summary; let in = index">
-                                {{experiece_summary}}</li>
+                            <li *ngFor="let experience_summary of column?.experience_summary; let in = index">
+                                {{experience_summary}}</li>
                         </ul>
                     </div>
 
                     <div class="container">
-                        <p class="row lead background-shadow">Technologies :</p>
+                        <p class="row lead background-shadow mb-0 pb-0">Technologies :</p>
                         <p class="row">{{column.technology.join(', ')}}</p>
                     </div>
                 </section>
