@@ -295,6 +295,36 @@
                 "VSAM",
                 "JCL"
             ]
+        },
+        {
+            "position": "Trainee Engineer",
+            "employer": {
+                "data": "Objectsol Technologies",
+                "label": "Objectsol Technologies",
+                "href": "http://www.objectsol.in/"
+            },
+            "account_description": "Elite Systems LTD",
+            "work_date": {
+                "start_date": "03/01/2009",
+                "end_date": "07/31/2009"
+            },
+            "work_location": {
+                "data": "Kolkata",
+                "href": "https://goo.gl/maps/eXJVGhEno9jRPkKr9",
+                "icon": "pin-map"
+            },
+            "project_desc": " I have worked OpenGL ES1.1 based iPhone game for Crazee Cube (digital versionof Bedlam Cube http://en.wikipedia.org/wiki/Bedlam_cube). The game is not currently available in the market; however, you can visit the following URL to take a look.",
+            "experience_summary": [
+                "http://www.youtube.com/watch?v=XifXyieukqw",
+                "https://www.youtube.com/watch?v=zQCDJqYa3ls",
+                "http://www.gamesindustry.biz/articles/crazee-cube-iphone-version-of-the-dragons--den-contender--with-a-potential-world-record-to-claim"
+            ],
+            "technology": [
+                "OpenGL ES 1.1",
+                "C++",
+                "C",
+                "iOS SDK"
+            ]
         }
     ]
 }
