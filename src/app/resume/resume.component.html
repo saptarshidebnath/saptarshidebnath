@@ -74,7 +74,8 @@
                     <div class="container">
                         <p class="row lead background-shadow mb-0 pb-0">Summary :</p>
                         <ul class="row">
-                            <li class="col-sm-12" *ngFor="let experience_summary of column?.experience_summary; let in = index">
+                            <li class="col-sm-12"
+                                *ngFor="let experience_summary of column?.experience_summary; let in = index">
                                 {{experience_summary}}</li>
                         </ul>
                     </div>
@@ -103,6 +104,21 @@
                         </div>
                     </section>
                 </section>
+            </div>
+        </section>
+        <section class="achievements justify-content-md-center container">
+            <div class="row">
+                <h4 class="text-center header background-shadow col-sm-12">Achievements</h4>
+            </div>
+            <div class="row">
+                <hr />
+            </div>
+            <div class="row">
+                <ul class="col-sm-12">
+                    <li *ngFor="let column of this?.resume?.achievements; let in = index" class="achievements mb-0">
+                        {{column}}
+                    </li>
+                </ul>
             </div>
         </section>
     </section>
