@@ -4,7 +4,11 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
+@import "../_vars";
+
 //Default is mobile
+
+
 
 section.page-home {
     margin-top: 10vh;
@@ -17,13 +21,13 @@ section.page-home {
             font-family: "Pacifico", cursive;
             font-size: 5em;
             text-align: center;
-            text-shadow: 5px 5px 5px #634747;
+            text-shadow: 10px 10px 10px $background_shadow_color;
             padding-bottom: 8vh;
         }
         p.banner-intro {
             font-size: 1.5em;
             text-align: center;
-            text-shadow: 5px 5px 5px #634747;
+            text-shadow: 5px 5px 5px $background_shadow_color;
         }
     }
 }

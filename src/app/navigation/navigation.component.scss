@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap");
-
+@import '../_vars';
 nav#sitenav {
     a.navbar-brand {
         font-family: "Lobster Two", cursive;
         font-size: 3em;
         font-weight: bold;
-        color: #8c141f;
-        text-shadow: 5px 5px 5px #634747;
+        color: $site_icon_color;
+        text-shadow: 5px 5px 5px $background_shadow_color;
     }
     a.activelink {
         text-decoration: underline;
@@ -15,7 +15,7 @@ nav#sitenav {
     div#navbarSupportedContent {
         ul > li > a {
             font-size: 1.5em;
-            color: rgb(28, 15, 102);
+            color: $link_color;
         }
     }
 }

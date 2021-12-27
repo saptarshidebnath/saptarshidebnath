@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import "./_vars";
 
 section#page{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1em;
-    color: rgb(18, 15, 20);
+    color: $text_color;
+    
+    .primary-color{
+        color: $header_text_color;
+    }
+
+    a{
+        color: $link_color;
+    }
 }
