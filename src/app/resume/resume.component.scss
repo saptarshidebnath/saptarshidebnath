@@ -34,9 +34,9 @@
 //     }
 // }
 a{
-    color: $site_icon_color;
+    color: $link_color;
     &:hover{
-        color: $site_icon_color;
+        color: $link_color;
         text-decoration: underline;
     }
 }
@@ -52,7 +52,11 @@ hr{
     @include textShadow;
 }
 
-.background-shadow{
+.experience-icon{
+    font-size: larger;
+}
+
+.header-decoration{
     @include textShadow;
     color: $site_icon_color;
     font-weight: bold;

@@ -40,6 +40,11 @@
             "icon": "github",
             "data": "saptarshidebnath",
             "href": "https://github.com/saptarshidebnath"
+        },
+        {
+            "icon": "globe",
+            "data": "http://saptarshidebnath.com",
+            "href": "http://saptarshidebnath.com"
         }
     ],
     "summary": [
@@ -333,5 +338,15 @@
         "Received Feather in my cap (Highest Award inside Wipro for individual contribution) award for outstanding performance in 2012.",
         "Developed an OpenGL ES based iPhone game which was showcased in London Toy Fair 2010.",
         "Sun Certified Java Programmer (1.4) (2009)"
+    ],
+    "work_authorization": [
+        {
+            "country": "USA",
+            "authorization": "i140 approved"
+        },
+        {
+            "country": "INDIA",
+            "authorization": "Approved to Work"
+        }
     ]
 }
