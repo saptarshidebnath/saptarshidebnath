@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -7,6 +7,8 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+
+  @ViewChild('MyEle', { static: false }) resumeComponent!: ElementRef<HTMLElement>;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,8 +21,7 @@ export class ResumeComponent implements OnInit {
     })
   }
 
-  displayPI(): boolean{
-    return true;
+  public downloadAsPDF() {
   }
 
 }

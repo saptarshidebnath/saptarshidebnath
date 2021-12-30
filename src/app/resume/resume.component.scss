@@ -1,67 +1,103 @@
-
 @import "~bootstrap/scss/bootstrap.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 
-@import '../_vars';
+@import "../_vars";
 
 @mixin textShadow {
-    text-shadow: 1px 1px 3px $background_shadow_color;
- }
-
-// section.resume {
-//     section.header{
-//         h1, h5{
-//             @include textShadow;
-//         }
-//     }
-//     section.body-summary{
-//         .summary{
-//             .header{
-//                 @include textShadow;
-//             }
-//             // background-color: red;
-//         }
-//         .skill-sets{
-//             .skill-set-container{
-//                 .skill-set-module{
-//                     .header{
-//                         @include textShadow;
-//                         text-decoration: underline;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-a{
-    color: $link_color;
-    &:hover{
-        color: $link_color;
-        text-decoration: underline;
-    }
+  text-shadow: 1px 1px 3px $background_shadow_color;
 }
 
-hr{
+#resume {
+  .print-page {
+    // font-size: 10rem;
+    position: fixed;
+    bottom: 10vh;
+    right: 1vw;
+    animation: hightight 10s ease-in-out infinite alternate;
+  }
+  a {
+    color: $link_color;
+    &:hover {
+      color: $link_color;
+      text-decoration: underline;
+    }
+  }
+
+  hr {
     @extend .w-75;
     @extend .my-2;
     border-top-color: white !important;
-}
+  }
 
-.label{
+  .label {
     font-weight: bold;
     @include textShadow;
-}
+  }
 
-.experience-icon{
+  .experience-icon {
     font-size: larger;
-}
+  }
 
-.header-decoration{
+  .header-decoration {
     @include textShadow;
     color: $site_icon_color;
     font-weight: bold;
+  }
+  .page-break {
+    page-break-after: auto;
+  }
+
+  .page-break-n {
+    page-break-after: never;
+  }
 }
 
-.section-divider{
-    @extend .mt-4;
+@keyframes hightight {
+  0% {
+    font-size: 1rem;
+  }
+  10% {
+    font-size: 1.5rem;
+  }
+  90% {
+    font-size: 1.5rem;
+  }
+  100% {
+    font-size: 1rem;
+  }
+}
+
+@media print {
+  #sitenav {
+    display: none !important;
+  }
+  #resume {
+    .print-page {
+      display: none;
+    }
+    a {
+      color: blue;
+    }
+
+    hr {
+      @extend .w-75;
+      @extend .my-2;
+      border-top-color: black !important;
+    }
+
+    .label {
+      font-weight: bold;
+      text-shadow: none;
+    }
+
+    .experience-icon {
+      font-size: larger;
+    }
+
+    .header-decoration {
+      text-shadow: none;
+      color: blue;
+      font-weight: bold;
+    }
+  }
 }

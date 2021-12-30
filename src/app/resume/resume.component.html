@@ -1,14 +1,16 @@
-<section id="resume" class="container">
-    <section class="resume-header row">
-
-
+<section id="resume" class="container" #MyEle>
+    <div class="print-page">
+        <a href="javascript:window.print()" title="Print to PDF"><i class="bi bi-printer"></i><i
+                class="bi bi-arrow-right"></i><i class="bi bi-file-earmark-pdf"></i></a>
+    </div>
+    <section class="resume-header row ">
         <section class="row">
-            <h1 class="header-decoration col-sm-12 text-center">{{this?.resume?.name?.firstName?.data}}
+            <h1 class="header-decoration  text-center">{{this?.resume?.name?.firstName?.data}}
                 {{this?.resume?.name?.lastName?.data}}
             </h1>
         </section>
         <section class="row">
-            <h5 class="header-decoration text-center col-sm-12">{{this?.resume?.head_line}}</h5>
+            <h5 class="header-decoration text-center ">{{this?.resume?.head_line}}</h5>
         </section>
         <section class="row row-cols-auto text-center justify-content-md-center">
             <div class="col" *ngFor="let column of this?.resume?.contact; let in = index">
@@ -36,36 +38,37 @@
         </section>
     </section>
     <section class="resume-body row">
-        <section class="row resume-summary justify-content-md-center mt-3">
-            <div class="row">
-                <h4 class="text-center header header-decoration col-sm-12">Summary</h4>
+        <section class="row resume-summary justify-content-md-center mt-3 ">
+            <div class="row ">
+                <h4 class="text-center header header-decoration ">Summary</h4>
             </div>
-            <hr class="row text-center" />
-            <div class="row text-center">
+            <hr class="row text-center " />
+            <div class="row text-center ">
                 <span *ngFor="let column of this?.resume?.summary; let in = index" class="summary-entry">
                     {{column}}
                 </span>
             </div>
         </section>
         <section class="row resume-experience-details-sections mt-3">
-            <div class="resume-experience-details-header row justify-content-md-center">
+            <div class="resume-experience-details-header row justify-content-md-center ">
                 <div class="row text-center">
-                    <h4 class="text-center header header-decoration col-sm-12">Work Experience</h4>
+                    <h4 class="text-center header header-decoration ">Work Experience</h4>
                 </div>
                 <hr class="row text-center" />
             </div>
 
-            <div class="row individual-exp-detail" *ngFor="let column of this?.resume?.work_experience; let in = index">
+            <div class="row individual-exp-detail"
+                *ngFor="let column of this?.resume?.work_experience; let in = index">
 
-                <div class="row">
-                    <h5 class="individual-exp-details-header mb-0 header-decoration">
+                <div class="row ">
+                    <h5 class="individual-exp-details-header mb-0 header-decoration ">
                         <i class="bi bi-briefcase experience-icon"></i>
                         <b class="px-2">{{column?.position}}</b>, <a href="{{column?.employer?.href}}" target="_blank"
                             data-toggle="tooltip" data-placement="top" title="{{column?.employer?.data}}">
                             {{column?.employer?.data}}</a><i class="bi bi-link-45deg"></i>
                     </h5>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <p class="work-location">
                         <span class="header-decoration">{{column?.account_description}}</span> ,
                         <i class="bi bi-{{column?.work_location?.icon}}"></i><a href="{{column?.work_location?.href}}"
@@ -76,10 +79,10 @@
                                 {{column?.work_date?.end_date}}</u></span>
                     </p>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <p class="lead"> {{column?.project_desc}} </p>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="row">
                         <p class="lead header-decoration mb-0 pb-0">Summary :</p>
                     </div>
@@ -90,7 +93,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="row">
                         <p class="header-decoration mb-0 pb-0 lead">Technologies :</p>
                     </div>
@@ -104,7 +107,7 @@
 
             <div class="skill-sets justify-content-md-center row">
                 <div class="row">
-                    <h4 class="text-center header header-decoration col-sm-12">Primary Skill Set</h4>
+                    <h4 class="text-center header header-decoration ">Primary Skill Set</h4>
                 </div>
                 <hr class="row text-center" />
                 <div class="row justify-content-md-center">
@@ -122,7 +125,7 @@
             </div>
             <div class="row achievements justify-content-md-center">
                 <div class="row">
-                    <h4 class="text-center header header-decoration col-sm-12">Achievements</h4>
+                    <h4 class="text-center header header-decoration ">Achievements</h4>
                 </div>
                 <hr class="row text-center" />
                 <div class="row">
@@ -135,7 +138,7 @@
             </div>
             <div class="row work_auth justify-content-md-center">
                 <div class="row text-center">
-                    <h4 class="text-center header header-decoration col-sm-12">Work Authorization </h4>
+                    <h4 class="text-center header header-decoration ">Work Authorization </h4>
                 </div>
                 <hr class="row text-center" />
                 <div class="row justify-content-md-center">
