@@ -8,39 +8,37 @@
 
 //Default is mobile
 
-
-
 section.page-home {
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    div {
-        h1.banner-text {
-            font-family: "Pacifico", cursive;
-            font-size: 5em;
-            text-align: center;
-            text-shadow: 10px 10px 10px $background_shadow_color;
-            padding-bottom: 8vh;
-        }
-        p.banner-intro {
-            font-size: 1.5em;
-            text-align: center;
-            text-shadow: 5px 5px 5px $background_shadow_color;
-        }
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    h1.banner-text {
+      font-family: "Pacifico", cursive;
+      font-size: 5em;
+      text-align: center;
+      text-shadow: 10px 10px 10px $background_shadow_color;
+      padding-bottom: 8vh;
     }
+    p.banner-intro {
+      font-size: 1.5em;
+      text-align: center;
+      text-shadow: 5px 5px 5px $background_shadow_color;
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
-    section.page-home {
-        div {
-            h1.banner-text {
-                font-size: 9em;
-            }
-            p.banner-intro {
-                font-size: 1.5em;
-            }
-        }
+  section.page-home {
+    div {
+      h1.banner-text {
+        font-size: 9em;
+      }
+      p.banner-intro {
+        font-size: 1.5em;
+      }
     }
+  }
 }
