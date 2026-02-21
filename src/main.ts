@@ -61,7 +61,7 @@ async function renderResume() {
 
         // Experience
         if (resumeData.experience && resumeData.experience.length > 0) {
-            html += `<h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Experience</h4>`;
+            html += `<h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-4">Experience</h4>`;
             html += `<div class="space-y-8 print:space-y-6">`;
 
             resumeData.experience.forEach((job: ResumeJob) => {
@@ -87,9 +87,9 @@ async function renderResume() {
         if (resumeData.skills && resumeData.skills.length > 0) {
             html += `
             <div class="prevent-print-break">
-                <h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Technical Skills</h4>
+                <h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-4">Technical Skills</h4>
                 <div class="flex flex-wrap gap-2">
-                    ${resumeData.skills.map((skill: string) => `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-900/30 text-blue-300 print:border print:border-gray-300 print:bg-white print:text-white">${skill}</span>`).join('')}
+                    ${resumeData.skills.map((skill: string) => `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-800/40 text-blue-300 print:border print:border-gray-300 print:bg-white print:text-white">${skill}</span>`).join('')}
                 </div>
             </div>`;
         }
@@ -98,7 +98,7 @@ async function renderResume() {
         if (resumeData.education && resumeData.education.length > 0) {
             html += `
             <div class="prevent-print-break">
-                <h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Education</h4>
+                <h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-4">Education</h4>
                 <div class="space-y-4">
             `;
 

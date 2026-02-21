@@ -11,13 +11,14 @@
         content="Staff Engineer specializing in System Design and Big Tech Public Sector architecture." />
     <!-- Replace with an actual URL later -->
     <meta property="og:image" content="https://saptarshidebnath.com/og-image.jpg" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#1e293b" />
 </head>
 
-<body class="bg-slate-950 text-slate-50 font-sans antialiased overflow-x-hidden pt-16 selection:bg-blue-200">
+<body
+    class="bg-[#0b1121] text-slate-50 font-sans antialiased overflow-x-hidden pt-16 selection:bg-blue-400 selection:text-white">
 
     <!-- Sticky Navigation -->
-    <header class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-800 print:hidden">
+    <header class="fixed top-0 w-full bg-[#0b1121]/80 backdrop-blur-md z-50 border-b border-white/10 print:hidden">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="font-bold text-xl tracking-tight"><a href="#">SD.</a></div>
             <div class="hidden sm:flex space-x-8 nav-links">
@@ -49,10 +50,10 @@
             class="spa-view relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden print:min-h-0 print:py-8 transition-all duration-300 ease-in-out">
             <!-- WebGL Canvas Background -->
             <canvas id="hero-canvas"
-                class="absolute inset-0 w-full h-full -z-10 bg-gradient-to-br from-slate-950 to-slate-900 print:hidden"></canvas>
+                class="absolute inset-0 w-full h-full -z-10 bg-gradient-to-br from-[#0b1121] to-[#040814] print:hidden"></canvas>
 
             <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-50 bg-clip-text">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent drop-shadow-sm pb-2">
                     Saptarshi Debnath
                 </h1>
                 <p class="text-xl md:text-3xl text-slate-300 font-medium">
@@ -68,7 +69,7 @@
                         View Resume
                     </a>
                     <a href="/contact"
-                        class="nav-link inline-flex items-center justify-center px-8 py-3 border border-slate-700 text-base font-medium rounded-md text-slate-200 bg-slate-900 hover:bg-slate-950 md:py-4 md:text-lg md:px-10 shadow-sm transition-all transform hover:-translate-y-0.5">
+                        class="nav-link inline-flex items-center justify-center px-8 py-3 border border-white/20 text-base font-medium rounded-md text-white bg-white/5 hover:bg-white/10 backdrop-blur-md md:py-4 md:text-lg md:px-10 shadow-sm transition-all transform hover:-translate-y-0.5">
                         Get in Touch
                     </a>
                 </div>
@@ -77,7 +78,7 @@
 
         <!-- About Section -->
         <section id="view-about"
-            class="spa-view hidden py-24 bg-slate-900 border-t border-slate-800 print:block print:py-8 transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-slate-700 border-t border-slate-600 print:block print:py-8 transition-all duration-300 ease-in-out">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
                     <div class="lg:col-span-4 mb-8 lg:mb-0">
@@ -102,7 +103,7 @@
 
         <!-- Resume Section (Hydrated via JSON) -->
         <section id="view-resume"
-            class="spa-view hidden py-24 bg-slate-950 border-t border-slate-800 print:block print:py-0 print:border-none transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-slate-800 border-t border-slate-600 print:block print:py-0 print:border-none transition-all duration-300 ease-in-out">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-ends mb-12 print:hidden">
                     <div>
@@ -112,7 +113,7 @@
                     <div>
                         <!-- This link points to the PDF generated at build time -->
                         <a href="/resume.pdf" download id="download-resume-btn"
-                            class="inline-flex items-center px-4 py-2 border border-slate-700 shadow-sm text-sm font-medium rounded-md text-slate-200 bg-slate-900 hover:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            class="inline-flex items-center px-4 py-2 border border-white/20 shadow-sm text-sm font-medium rounded-md text-white bg-white/5 hover:bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             <svg class="-ml-1 mr-2 h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -126,7 +127,7 @@
 
                 <!-- Container where main.js will render the resume -->
                 <div id="resume-container"
-                    class="bg-slate-900 rounded-xl shadow-sm border border-slate-800 p-8 md:p-12 print:shadow-none print:border-none print:p-0">
+                    class="bg-slate-700 rounded-xl shadow-sm border border-slate-600 p-8 md:p-12 print:shadow-none print:border-none print:p-0">
                     <div class="text-center py-12 text-slate-400 animate-pulse">Loading resume data...</div>
                 </div>
             </div>
@@ -134,7 +135,7 @@
 
         <!-- System Design & Java Focus -->
         <section id="view-system-design"
-            class="spa-view hidden py-24 bg-slate-900 border-t border-slate-800 print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-slate-700 border-t border-slate-600 print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">System & Architecture
@@ -144,8 +145,8 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="p-8 bg-slate-950 rounded-2xl border border-slate-800 transition-shadow hover:shadow-md">
-                        <div class="w-12 h-12 bg-slate-950/30 rounded-lg flex items-center justify-center mb-6">
+                    <div class="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
+                        <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -156,8 +157,9 @@
                         <p class="text-slate-300">Event-driven architectures utilizing Kafka and asynchronous Java
                             constructs to handle high-throughput transactional data consistently without locking.</p>
                     </div>
-                    <div class="p-8 bg-slate-950 rounded-2xl border border-slate-800 transition-shadow hover:shadow-md">
-                        <div class="w-12 h-12 bg-slate-950/30 rounded-lg flex items-center justify-center mb-6">
+                    <div
+                        class="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
+                        <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
@@ -165,7 +167,8 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-50 mb-3">Secure Public Sector Deployments</h3>
-                        <p class="text-slate-300">Zero-trust implementations and compliance-first infrastructure modeling
+                        <p class="text-slate-300">Zero-trust implementations and compliance-first infrastructure
+                            modeling
                             targeting FedRAMP high boundaries while maintaining developer velocity.</p>
                     </div>
                 </div>
@@ -174,7 +177,7 @@
 
         <!-- Optional Coaching / CTA Section -->
         <section id="view-coaching"
-            class="spa-view hidden py-24 bg-slate-950 text-white print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-slate-800 text-white print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-balance">
                 <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">Staff-Level Interview Preparation</h2>
                 <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
@@ -190,7 +193,7 @@
 
         <!-- Contact Section -->
         <section id="view-contact"
-            class="spa-view hidden py-24 bg-slate-950 print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-slate-800 print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold text-slate-50 sm:text-4xl mb-8">Get in Touch</h2>
                 <p class="text-lg text-slate-300 mb-10">
@@ -230,7 +233,7 @@
 
     </main>
 
-    <footer class="bg-slate-900 py-8 border-t border-slate-800 text-center text-sm text-slate-400 print:hidden">
+    <footer class="bg-transparent py-8 border-t border-white/10 text-center text-sm text-slate-500 print:hidden">
         <p>&copy; <span id="year"></span> Saptarshi Debnath. Built with Vite & Preact.</p>
     </footer>
 
