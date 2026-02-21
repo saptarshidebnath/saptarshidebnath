@@ -22,6 +22,7 @@ interface ResumeData {
     name: string;
     contact: {
         email: string;
+        phone: string;
         location: string;
         linkedIn: string;
         github: string;
@@ -52,9 +53,25 @@ async function renderResume() {
             <div class="mb-10 text-center sm:text-left print:mb-6 print:text-left print:border-b-2 print:border-black print:pb-4">
                 <h3 class="text-2xl font-bold text-white print:text-black print:text-3xl print:font-serif">${resumeData.name}</h3>
                 <div class="mt-2 text-sm text-slate-400 flex flex-wrap justify-center sm:justify-start gap-4 print:mt-1 print:text-black">
-                    <span>${resumeData.contact.email}</span>
+                    <span class="print:hidden">
+                        <button id="reveal-email" class="hover:text-blue-400 transition-colors cursor-pointer" data-e="${btoa(resumeData.contact.email)}">
+                            Click to reveal email
+                        </button>
+                    </span>
+                    <span class="hidden print:inline-block">${resumeData.contact.email}</span>
+
                     <span class="print:hidden">&bull;</span>
                     <span class="hidden print:inline-block">|</span>
+                    
+                    <span class="print:hidden">
+                        <button id="reveal-phone" class="hover:text-blue-400 transition-colors cursor-pointer" data-p="${btoa(resumeData.contact.phone)}">
+                            Click to reveal phone
+                        </button>
+                    </span>
+                    <span class="hidden print:inline-block">${resumeData.contact.phone}</span>
+                    <span class="hidden print:inline-block">|</span>
+
+                    <span class="print:hidden">&bull;</span>
                     <span>${resumeData.contact.location}</span>
                     <span class="print:hidden">&bull;</span>
                     <span class="hidden print:inline-block">|</span>
@@ -125,6 +142,45 @@ async function renderResume() {
         html += `</div>`; // End Grid
 
         container.innerHTML = html;
+
+        // Add event listeners for reveal buttons
+        const revealPhone = document.getElementById('reveal-phone');
+        if (revealPhone) {
+            revealPhone.addEventListener('click', () => {
+                const encoded = revealPhone.getAttribute('data-p');
+                if (encoded) {
+                    const phone = atob(encoded);
+                    const cleanPhone = phone.replace(/\D/g, '');
+                    revealPhone.outerHTML = `<a href="tel:${cleanPhone}" class="text-blue-400 hover:text-blue-300 transition-colors">${phone}</a>`;
+                }
+            });
+        }
+
+        const revealEmail = document.getElementById('reveal-email');
+        if (revealEmail) {
+            revealEmail.addEventListener('click', () => {
+                const encoded = revealEmail.getAttribute('data-e');
+                if (encoded) {
+                    const email = atob(encoded);
+                    revealEmail.outerHTML = `<a href="mailto:${email}" class="text-blue-400 hover:text-blue-300 transition-colors">${email}</a>`;
+                }
+            });
+        }
+
+        // Add event listener for PDF download (obfuscated from crawlers)
+        const downloadBtn = document.getElementById('download-resume-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                // Construct path in JS so it's not in the static HTML
+                const filename = 'saptarshi-debnath.pdf';
+                const link = document.createElement('a');
+                link.href = `/${filename}`;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        }
 
     } catch (err) {
         console.error(err);

@@ -89,9 +89,9 @@
                         <div class="mt-2 w-16 h-1 bg-blue-600 rounded"></div>
                     </div>
                     <div>
-                        <!-- This link points to the PDF generated at build time -->
-                        <a href="/saptarshi-debnath.pdf" download id="download-resume-btn"
-                            class="inline-flex items-center px-4 py-2 border border-white/20 shadow-sm text-sm font-medium rounded-md text-white bg-white/5 hover:bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <!-- Path is hidden from crawlers; handled via JS click event -->
+                        <button id="download-resume-btn"
+                            class="inline-flex items-center px-4 py-2 border border-white/20 shadow-sm text-sm font-medium rounded-md text-white bg-white/5 hover:bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer transition-all">
                             <svg class="-ml-1 mr-2 h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -99,7 +99,7 @@
                                     clip-rule="evenodd" />
                             </svg>
                             Download PDF
-                        </a>
+                        </button>
                     </div>
                 </div>
 

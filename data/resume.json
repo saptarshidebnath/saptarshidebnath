@@ -1,10 +1,11 @@
 {
     "name": "Saptarshi Debnath",
     "contact": {
-        "email": "saptarshidebnath@example.com",
+        "email": "saptarshi.devnath@gmail.com",
         "location": "Gaithersburg, MD",
         "linkedIn": "linkedin.com/in/saptarshidebnath",
-        "github": "github.com/saptarshidebnath"
+        "github": "github.com/saptarshidebnath",
+        "phone": "+1 (973)-348-5557"
     },
     "summary": "Visionary Technical Architect and Staff Engineer with expansive expertise in designing, scaling, and modernizing high-latency, cloud-native distributed systems. Proven track record of leading architectural transformations, driving organizational engineering standards, and mentoring cross-functional teams to deliver highly available, zero-trust infrastructure. Seeking to leverage deep expertise in system design and microservices as a Principal Architect to drive enterprise-wide technical strategy.",
     "experience": [
