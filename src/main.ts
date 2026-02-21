@@ -1,139 +1,148 @@
 import './style.scss';
 import { initWebGL } from './webgl';
+import { renderResumeHTML, renderHeroHTML, renderSocialLinksHTML, renderContactHTML, type ResumeData } from './render-engine';
 
 // Initialize the 3D hero background
 initWebGL();
 
-interface ResumeJob {
-    role: string;
-    company: string;
-    duration: string;
-    highlights: string[];
-}
+// Helper to handle contact info reveal
+function setupRevealListener(id: string, type: 'email' | 'phone') {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-interface ResumeEducation {
-    degree: string;
-    institution: string;
-    year: string;
-}
+    const originalHTML = el.innerHTML;
+    const svgIcon = originalHTML.match(/<svg.*?>.*?<\/svg>/s)?.[0] || '';
 
-interface ResumeData {
-    name: string;
-    contact: {
-        email: string;
-        location: string;
-        linkedIn: string;
-        github: string;
-    };
-    summary: string;
-    experience: ResumeJob[];
-    skills: string[];
-    education: ResumeEducation[];
+    el.addEventListener('click', () => {
+        const encoded = el.getAttribute(type === 'email' ? 'data-e' : 'data-p');
+        if (encoded) {
+            const val = atob(encoded);
+            if (type === 'email') {
+                el.outerHTML = `<a href="mailto:${val}" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">${svgIcon}<span>${val}</span></a>`;
+            } else {
+                const cleanPhone = val.replace(/\D/g, '');
+                el.outerHTML = `<a href="tel:${cleanPhone}" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">${svgIcon}<span>${val}</span></a>`;
+            }
+        }
+    });
 }
 
 // Fetch and render the resume JSON
 async function renderResume() {
-    const container = document.getElementById('resume-container');
-    if (!container) return;
+    const resumeContainer = document.getElementById('resume-container');
+    const heroSection = document.getElementById('view-home');
+    const contactContainer = document.getElementById('contact-container');
+
+    if (!resumeContainer) return;
 
     try {
-        // Fetch raw JSON from public/data or relative path
         const res = await fetch('/data/resume.json');
         if (!res.ok) throw new Error('Failed to load resume.json');
 
-        const resumeData = await res.json();
+        const resumeData: ResumeData = await res.json();
 
-        // Build HTML from JSON
-        let html = '';
+        // Dynamically update SEO meta tags
+        document.title = `${resumeData.name} - Staff Engineer & System Design Architect`;
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', `${resumeData.name} - Staff Engineer`);
 
-        // Header / Summary
-        html += `
-            <div class="mb-10 text-center sm:text-left print:mb-6">
-                <h3 class="text-2xl font-bold text-white">${resumeData.name}</h3>
-                <div class="mt-2 text-sm text-slate-400 flex flex-wrap justify-center sm:justify-start gap-4">
-                    <span>${resumeData.contact.email}</span>
-                    <span>&bull;</span>
-                    <span>${resumeData.contact.location}</span>
-                </div>
-                <p class="mt-4 text-slate-300 leading-relaxed max-w-3xl">${resumeData.summary}</p>
-            </div>
-        `;
+        const shortDescription = resumeData.summary.length > 150
+            ? resumeData.summary.substring(0, resumeData.summary.indexOf('.') + 1) || resumeData.summary.substring(0, 150) + '...'
+            : resumeData.summary;
 
-        // Experience
-        if (resumeData.experience && resumeData.experience.length > 0) {
-            html += `<h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Experience</h4>`;
-            html += `<div class="space-y-8 print:space-y-6">`;
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', shortDescription);
 
-            resumeData.experience.forEach((job: ResumeJob) => {
-                html += `
-                <div class="prevent-print-break">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
-                        <h5 class="text-lg font-bold text-white">${job.role} <span class="text-slate-400 font-normal">at ${job.company}</span></h5>
-                        <span class="text-sm font-medium text-slate-400 mt-1 sm:mt-0">${job.duration}</span>
-                    </div>
-                    <ul class="list-disc list-outside ml-5 text-slate-300 space-y-2 marker:text-blue-500">
-                        ${job.highlights.map((h: string) => `<li>${h}</li>`).join('')}
-                    </ul>
-                </div>
-                `;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', shortDescription);
+
+        // Hydrate Sections
+        if (heroSection) renderHeroHTML(heroSection, resumeData);
+        if (contactContainer) contactContainer.innerHTML = renderContactHTML(resumeData);
+        resumeContainer.innerHTML = renderResumeHTML(resumeData);
+
+        // Bind reveal listeners for Resume header
+        setupRevealListener('reveal-email', 'email');
+        setupRevealListener('reveal-phone', 'phone');
+
+        // Bind reveal listeners for Contact page
+        setupRevealListener('reveal-email-contact', 'email');
+        setupRevealListener('reveal-phone-contact', 'phone');
+
+        // Print Preview Toggle
+        const togglePrintBtn = document.getElementById('toggle-print-preview-btn');
+        if (togglePrintBtn) {
+            togglePrintBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('print-preview');
+                const isPreview = document.documentElement.classList.contains('print-preview');
+                togglePrintBtn.textContent = isPreview ? 'Exit Preview' : 'Preview Print';
+
+                // When in preview, we might need to hide/show views correctly
+                if (isPreview) {
+                    const resumeView = document.getElementById('view-resume');
+                    if (resumeView) {
+                        resumeView.classList.remove('hidden');
+                        resumeView.style.display = 'block';
+                    }
+                } else {
+                    handleRoute(); // Refresh visibility based on path
+                }
             });
-            html += `</div>`;
         }
 
-        // Setup simple two-column layout for Skills & Education on large screens
-        html += `<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 print:mt-8 print:gap-4">`;
-
-        // Skills
-        if (resumeData.skills && resumeData.skills.length > 0) {
-            html += `
-            <div class="prevent-print-break">
-                <h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Technical Skills</h4>
-                <div class="flex flex-wrap gap-2">
-                    ${resumeData.skills.map((skill: string) => `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-900/30 text-blue-300 print:border print:border-gray-300 print:bg-white print:text-white">${skill}</span>`).join('')}
-                </div>
-            </div>`;
-        }
-
-        // Education
-        if (resumeData.education && resumeData.education.length > 0) {
-            html += `
-            <div class="prevent-print-break">
-                <h4 class="text-xl font-bold text-white border-b border-slate-800 pb-2 mb-6 print:mb-4">Education</h4>
-                <div class="space-y-4">
-            `;
-
-            resumeData.education.forEach((edu: ResumeEducation) => {
-                html += `
-                <div>
-                    <h5 class="text-base font-bold text-white">${edu.degree}</h5>
-                    <div class="text-sm text-slate-400">${edu.institution} &bull; ${edu.year}</div>
-                </div>
-                `;
+        // PDF Download
+        const downloadBtn = document.getElementById('download-resume-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                const filename = `${resumeData.name.toLowerCase().replace(/\s+/g, '-')}.pdf`;
+                const link = document.createElement('a');
+                link.href = `/${filename}`;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             });
-            html += `</div></div>`;
         }
-
-        html += `</div>`; // End Grid
-
-        container.innerHTML = html;
 
     } catch (err) {
         console.error(err);
-        container.innerHTML = `<div class="text-center py-12 text-red-500">Error loading resume data. Please try again later.</div>`;
+        if (resumeContainer) {
+            resumeContainer.innerHTML = `<div class="text-center py-12 text-red-500">Error loading resume data. Please try again later.</div>`;
+        }
+    } finally {
+        // Wait for all fonts to load before revealing
+        if ('fonts' in document) {
+            await document.fonts.ready;
+        }
+        // Reveal the page after hydration is complete to prevent FOUC
+        document.body.classList.remove('fouc-cloak');
     }
 }
+
 
 let isNavigating = false;
 
 // Custom SPA Router
 function handleRoute() {
     if (isNavigating) return;
+
+    // Support for GitHub Pages SPA redirect hack (404.html)
+    (function (l) {
+        if (l.search[1] === 'p' && l.search[2] === '=') {
+            const decoded = l.search.slice(3).replace(/~and~/g, '&');
+            const path = decoded.split('&q=')[0];
+            const query = decoded.split('&q=')[1] || '';
+            window.history.replaceState(null, '',
+                l.pathname.slice(0, -1) + (path ? '/' + path : '') + (query ? '?' + query : '') + l.hash
+            );
+        }
+    }(window.location));
+
     const path = window.location.pathname;
 
     // Default to home if root
     let targetView = 'home';
     if (path !== '/' && path !== '') {
-        // e.g. /about -> about
         targetView = path.replace('/', '');
     }
 
@@ -146,12 +155,15 @@ function handleRoute() {
 
     // Update active nav link styling
     document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/home')) {
+        const href = link.getAttribute('href');
+        // If it's the root path, match exactly "/"
+        // Otherwise match exact path
+        if (href === path) {
             link.classList.add('text-blue-400');
-            link.classList.remove('text-white');
+            link.classList.remove('text-slate-50', 'hover:text-blue-400');
         } else {
             link.classList.remove('text-blue-400');
-            link.classList.add('text-white');
+            link.classList.add('text-slate-50', 'hover:text-blue-400');
         }
     });
 

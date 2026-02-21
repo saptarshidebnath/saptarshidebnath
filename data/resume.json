@@ -1,50 +1,130 @@
 {
     "name": "Saptarshi Debnath",
     "contact": {
-        "email": "saptarshi@example.com",
-        "location": "Seattle, WA",
-        "linkedIn": "linkedin.com/in/saptarshidebnath",
-        "github": "github.com/saptarshidebnath"
+        "email": "saptarshi.devnath@gmail.com",
+        "location": "Washington, DC",
+        "linkedIn": "https://linkedin.com/in/saptarshidebnath",
+        "github": "https://github.com/saptarshidebnath",
+        "phone": "+1 (973)-348-5557"
     },
-    "summary": "Staff Engineer with 10+ years of experience designing and scaling highly-available distributed systems for enterprise and Public Sector environments. Expertise in asynchronous Java, event-driven architectures (Kafka), and leading cross-functional pods to deliver zero-trust, compliance-first infrastructure.",
+    "hero_tagline": "Staff Engineer & System Design Architect",
+    "hero_description": "Driving technical excellence and scalable architectures in Big Tech Public Sector environments.",
+    "summary": "Technical Architect and Staff Engineer specializing in the design, scaling, and modernization of high-latency, cloud-native distributed systems. Proven track record of leading architectural transformations, driving organizational engineering standards, and delivering resilient, zero-trust infrastructure at enterprise scale.",
     "experience": [
         {
-            "role": "Staff Software Engineer",
-            "company": "Big Tech Public Sector",
-            "duration": "2020 - Present",
+            "role": "Senior Software Engineer (Staff-Level Role)",
+            "company": "Marriott International (Remote/Hybrid)",
+            "duration": "Nov 2023 - Present",
+            "web_summary": "Architecting global-scale infrastructure and driving engineering excellence across the organization.",
             "highlights": [
-                "Architected a FedRAMP High compliant distributed event ingestion pipeline using Java 17 and Kafka, processing 5M+ events per minute with sub-second p99 latency.",
-                "Led a team of 8 engineers across 3 time zones to refactor a monolithic legacy authentication service into resilient, bounded contexts, reducing deployment lead time by 40%.",
-                "Established technical standards for asynchronous communication patterns, mentoring senior engineers and conducting regular system design reviews."
+                "Leading technical strategy and architectural design for high-scale software infrastructure, supporting millions of transactions on native cloud environments.",
+                "Serving as an organizational multiplier by defining software design patterns and best practices adopted by 4 cross-functional engineering pods.",
+                "Directing large-scale performance optimizations for distributed microservices, ensuring single-digit millisecond latency for critical path APIs.",
+                "Mentoring senior and lead engineers (5–6+ years exp) while advocating for zero-trust infrastructure and cloud-native resilience standards.",
+                "Technologies: Java, Cloud Infrastructure, Distributed Systems, Microservices Architecture."
             ]
         },
         {
-            "role": "Senior Java Developer",
-            "company": "Enterprise Inc.",
-            "duration": "2015 - 2020",
+            "role": "Senior Specialist (Technical Architect)",
+            "company": "Deloitte | Client: Edward Jones",
+            "duration": "Feb 2023 - Nov 2023",
+            "web_summary": "Provided technical leadership and architectural oversight for an enterprise contact management system.",
             "highlights": [
-                "Migrated key financial transaction logic from synchronous REST to an asynchronous reactive stream model, improving system throughput by 3x during peak load.",
-                "Implemented circuit breakers and bulkheads to prevent cascading failures across 15+ microservices.",
-                "Reduced cloud infrastructure costs by 20% by optimizing JVM garbage collection tuning and container resource allocation."
+                "Served as a Technical Architect focusing on code quality, security standards, and modern design patterns for a financial contact application.",
+                "Championed the adoption of test-driven development (TDD) and best practices through rigorous code reviews and developer mentorship.",
+                "Collaborated with cross-functional teams to align legacy data workflows with cloud-native architectural standards."
+            ]
+        },
+        {
+            "role": "Technical Architect / Lead",
+            "company": "Mindtree Ltd | Client: Marriott International",
+            "duration": "Jan 2019 - Dec 2022",
+            "web_summary": "Spearheaded the transition of monolithic reservation systems to reactive, cloud-native microservices.",
+            "highlights": [
+                "Spearheaded the strategic transition of global monolithic applications to resilient, reactive microservices using Play/Akka and Spring WebFlux.",
+                "Designed and scaled high-performance RESTful microservices for global reservations and property management systems.",
+                "Championed organizational performance standards, tuning enterprise APIs to achieve sub-second latency.",
+                "Technologies: Java 11/8, Play/Akka, Spring WebFlux, Couchbase, Red Hat OpenShift."
+            ]
+        },
+        {
+            "role": "Senior Software Engineer / Technical Lead",
+            "company": "Mindtree Ltd | Client: Amex GBT",
+            "duration": "Sep 2017 - Dec 2018",
+            "web_summary": "Managed a complex travel portal microservices ecosystem and automated deployment pipelines.",
+            "highlights": [
+                "Worked on the maintenance and feature development of a travel portal ecosystem consisting of 8 distinct microservices.",
+                "Orchestrated automated testing and deployment strategies using Selenium, Jenkins, and Docker.",
+                "Managed deployments across multiple environments (DEV, QA, PROD) using Red Hat OpenShift.",
+                "Technologies: Java 8, Spring Boot, ActiveMQ, Cassandra, PostgreSQL, Redis, Angular 2."
+            ]
+        },
+        {
+            "role": "Senior Software Engineer",
+            "company": "Wipro Technologies | Client: Capital One",
+            "duration": "Oct 2015 - Aug 2017",
+            "web_summary": "Key contributor to system automation and AWS infrastructure certification initiatives.",
+            "highlights": [
+                "Built an automated Software Intake Form workflow using AngularJS and Spring MVC.",
+                "Certified AWS AMI images using Java 8 and Cucumber/Gherkin to ensure security and compliance.",
+                "Automated virtual development environments utilizing Vagrant and VirtualBox.",
+                "Technologies: Java 8, Shell Scripting, Vagrant, MongoDB, Node JS."
+            ]
+        },
+        {
+            "role": "Senior Software Engineer / Team Lead",
+            "company": "Wipro Technologies | Client: Novartis",
+            "duration": "Nov 2011 - Aug 2017",
+            "web_summary": "Onsite Coordinator and Lead for digital marketing and e-commerce platforms.",
+            "highlights": [
+                "Acted as Onsite Coordinator/Team Lead for the maintenance of oncology e-marketing websites.",
+                "Developed and optimized web platforms based on a proprietary Struts 1.x framework.",
+                "Managed cross-functional communications between onsite clients and offshore teams.",
+                "Technologies: Java 1.7, JSP, jQuery, Mootools."
+            ]
+        },
+        {
+            "role": "Software Engineer",
+            "company": "Wipro Technologies | Client: Bank Of New York Mellon",
+            "duration": "Sep 2009 - Oct 2011",
+            "web_summary": "Developed custom reporting solutions for large scale banking infrastructure.",
+            "highlights": [
+                "Generated and transmitted highly customized reports between bank infrastructure and clients.",
+                "Developed complex data extraction and reporting logic using Mainframe FOCUS and Actuate.",
+                "Technologies: Mainframe FOCUS, DB2, VSAM, JCL."
+            ]
+        },
+        {
+            "role": "Trainee Engineer",
+            "company": "Objectsol Technologies (Kolkata, India)",
+            "duration": "Mar 2009 - Jul 2009",
+            "web_summary": "Initial exploration into mobile game development and OpenGL graphics.",
+            "highlights": [
+                "Developed an OpenGL ES 1.1 based iPhone game 'Crazee Cube'.",
+                "Gained foundational experience in C++, iOS SDK, and computer graphics."
             ]
         }
     ],
     "skills": [
-        "Java",
-        "Spring Boot",
-        "Kafka",
-        "PostgreSQL",
-        "React",
-        "AWS GovCloud",
+        "System Architecture",
+        "Software Infrastructure",
+        "Software Design",
         "Distributed Systems",
-        "System Design",
-        "Kubernetes"
+        "Cloud-Native Design",
+        "Java / Spring / Akka",
+        "Asynchronous Java Programming",
+        "AWS & OpenShift",
+        "Docker & Kubernetes",
+        "Kafka & Event-Driven",
+        "NoSQL (Couchbase, Cassandra, MongoDB, DocumentDB)",
+        "DevOps & CI/CD",
+        "Performance Tuning"
     ],
     "education": [
         {
-            "degree": "M.S. in Computer Science",
-            "institution": "University of Technology",
-            "year": "2015"
+            "degree": "Bachelor of Technology (B-Tech), Computer Science and Engineering",
+            "institution": "West Bengal University of Technology",
+            "year": "2008"
         }
     ]
 }

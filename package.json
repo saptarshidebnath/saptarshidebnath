@@ -7,7 +7,9 @@
     "test": "cucumber-js",
     "dev": "vite",
     "build": "vite build && node scripts/generate-pdf.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
     "autoprefixer": "^10.4.24",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "puppeteer": "^24.37.5",
     "sass": "^1.97.3",
@@ -23,5 +26,9 @@
     "tailwindcss": "^4.2.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@types/three": "^0.183.1",
+    "three": "^0.183.1"
   }
 }
