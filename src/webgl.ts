@@ -1,9 +1,9 @@
 /**
- * Ultra-light WebGL particles for the Hero background.
+ * Canvas-based animated sea wave background.
  * Respects `prefers-reduced-motion`.
  */
 export function initWebGL() {
-    const canvas = document.getElementById('hero-canvas');
+    const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
     if (!canvas) return;
 
     // Check for accessibility preference
@@ -14,92 +14,79 @@ export function initWebGL() {
     }
 
     const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+    if (!ctx) return;
 
-    // Very simple, lightweight particle system
-    const config = {
-        particleCount: 50,
-        baseSize: 1.5,
-        baseSpeed: 0.2,
-        colors: ['rgba(96, 165, 250, 0.4)', 'rgba(59, 130, 246, 0.3)', 'rgba(147, 197, 253, 0.5)']
-    };
+    let width = 0;
+    let height = 0;
+    let time = 0;
 
-    function resize() {
-        width = canvas.clientWidth;
-        height = canvas.clientHeight;
-        // Fix for high DPI displays
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
-        initParticles();
-    }
+    class Wave {
+        yOffsetRatio: number;
+        amplitude: number;
+        wavelength: number;
+        speed: number;
+        color: string;
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.size = Math.random() * config.baseSize + 0.5;
-            this.speedX = (Math.random() - 0.5) * config.baseSpeed;
-            this.speedY = (Math.random() - 0.5) * config.baseSpeed;
-            this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
+        constructor(yOffsetRatio: number, amplitude: number, wavelength: number, speed: number, color: string) {
+            this.yOffsetRatio = yOffsetRatio;
+            this.amplitude = amplitude;
+            this.wavelength = wavelength;
+            this.speed = speed;
+            this.color = color;
         }
 
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-
-            // Loop around edges
-            if (this.x < 0) this.x = width;
-            if (this.x > width) this.x = 0;
-            if (this.y < 0) this.y = height;
-            if (this.y > height) this.y = 0;
-        }
-
-        draw() {
-            ctx.fillStyle = this.color;
+        draw(ctx: CanvasRenderingContext2D, time: number, width: number, height: number) {
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.moveTo(0, height);
+
+            const yOffset = height * this.yOffsetRatio;
+
+            for (let x = 0; x <= width; x += 10) {
+                // Primary rolling wave
+                const y1 = Math.sin(x * this.wavelength + time * this.speed) * this.amplitude;
+                // Secondary wave for organic texture
+                const y2 = Math.cos(x * (this.wavelength * 2.5) + time * (this.speed * 1.5)) * (this.amplitude * 0.3);
+                // Slowly shifting tertiary wave
+                const y3 = Math.sin(x * (this.wavelength * 0.5) - time * (this.speed * 0.5)) * (this.amplitude * 0.4);
+
+                ctx.lineTo(x, height - yOffset - y1 - y2 - y3);
+            }
+
+            ctx.lineTo(width, height);
+            ctx.lineTo(0, height);
+            ctx.closePath();
+
+            ctx.fillStyle = this.color;
             ctx.fill();
         }
     }
 
-    function initParticles() {
-        particles = [];
-        for (let i = 0; i < config.particleCount; i++) {
-            particles.push(new Particle());
-        }
-    }
+    // Material Design 3 inspired deep sea wave colors targeting a dark theme
+    const waves = [
+        new Wave(0.20, 40, 0.002, 0.015, 'rgba(15, 23, 42, 0.6)'),   // Slate 900
+        new Wave(0.12, 50, 0.0015, 0.01, 'rgba(30, 58, 138, 0.4)'),   // Blue 900
+        new Wave(0.02, 45, 0.001, 0.008, 'rgba(29, 78, 216, 0.2)')    // Blue 700
+    ];
 
-    function drawLines() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < 150) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(96, 165, 250, ${0.2 * (1 - distance / 150)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
+    function resize() {
+        width = canvas.clientWidth;
+        // Make the canvas slightly taller than its container so the waves don't get cut off randomly
+        height = canvas.clientHeight;
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx?.scale(dpr, dpr);
     }
 
     function animate() {
+        if (!ctx) return;
         ctx.clearRect(0, 0, width, height);
 
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-        }
+        time += 1;
 
-        drawLines();
+        // Draw waves back to front
+        waves.forEach(wave => wave.draw(ctx, time, width, height));
+
         requestAnimationFrame(animate);
     }
 
