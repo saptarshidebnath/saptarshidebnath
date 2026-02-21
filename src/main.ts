@@ -142,7 +142,6 @@ function handleRoute() {
     // Default to home if root
     let targetView = 'home';
     if (path !== '/' && path !== '') {
-        // e.g. /about -> about
         targetView = path.replace('/', '');
     }
 
@@ -155,12 +154,15 @@ function handleRoute() {
 
     // Update active nav link styling
     document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === path || (path === '/' && link.getAttribute('href') === '/home')) {
+        const href = link.getAttribute('href');
+        // If it's the root path, match exactly "/"
+        // Otherwise match exact path
+        if (href === path) {
             link.classList.add('text-blue-400');
-            link.classList.remove('text-white');
+            link.classList.remove('text-slate-50', 'hover:text-blue-400');
         } else {
             link.classList.remove('text-blue-400');
-            link.classList.add('text-white');
+            link.classList.add('text-slate-50', 'hover:text-blue-400');
         }
     });
 
