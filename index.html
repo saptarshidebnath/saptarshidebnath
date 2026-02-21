@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saptarshi Debnath - Staff Engineer & System Design Architect</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Saptarshi Debnath - Staff Engineer" />
+    <meta property="og:description"
+        content="Staff Engineer specializing in System Design and Big Tech Public Sector architecture." />
+    <!-- Replace with an actual URL later -->
+    <meta property="og:image" content="https://saptarshidebnath.com/og-image.jpg" />
+    <meta name="theme-color" content="#0f172a" />
+</head>
+
+<body class="bg-slate-950 text-slate-50 font-sans antialiased overflow-x-hidden pt-16 selection:bg-blue-200">
+
+    <!-- Sticky Navigation -->
+    <header class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-800 print:hidden">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tight"><a href="#">SD.</a></div>
+            <div class="hidden sm:flex space-x-8 nav-links">
+                <a href="/about" class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">About</a>
+                <a href="/resume" class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Resume</a>
+                <a href="/system-design"
+                    class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">System
+                    Design</a>
+                <a href="/contact"
+                    class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <div class="sm:hidden flex items-center">
+                <!-- Simple mobile menu toggle placeholder -->
+                <button type="button" class="text-slate-400 hover:text-slate-50 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section (Home) -->
+        <section id="view-home"
+            class="spa-view relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden print:min-h-0 print:py-8 transition-all duration-300 ease-in-out">
+            <!-- WebGL Canvas Background -->
+            <canvas id="hero-canvas"
+                class="absolute inset-0 w-full h-full -z-10 bg-gradient-to-br from-slate-950 to-slate-900 print:hidden"></canvas>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-50 bg-clip-text">
+                    Saptarshi Debnath
+                </h1>
+                <p class="text-xl md:text-3xl text-slate-300 font-medium">
+                    Staff Engineer <span class="text-blue-400">&bull;</span> System Design Architect
+                </p>
+                <p class="mt-4 max-w-2xl text-lg text-slate-400 mx-auto">
+                    Driving technical excellence and scalable architectures in Big Tech Public Sector environments. No
+                    clearance required.
+                </p>
+                <div class="pt-8 flex justify-center space-x-4 print:hidden">
+                    <a href="/resume"
+                        class="nav-link inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 shadow-sm transition-all transform hover:-translate-y-0.5">
+                        View Resume
+                    </a>
+                    <a href="/contact"
+                        class="nav-link inline-flex items-center justify-center px-8 py-3 border border-slate-700 text-base font-medium rounded-md text-slate-200 bg-slate-900 hover:bg-slate-950 md:py-4 md:text-lg md:px-10 shadow-sm transition-all transform hover:-translate-y-0.5">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="view-about"
+            class="spa-view hidden py-24 bg-slate-900 border-t border-slate-800 print:block print:py-8 transition-all duration-300 ease-in-out">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
+                    <div class="lg:col-span-4 mb-8 lg:mb-0">
+                        <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">About Me</h2>
+                        <div class="mt-2 w-16 h-1 bg-blue-600 rounded"></div>
+                    </div>
+                    <div class="lg:col-span-8 prose prose-lg prose-blue text-slate-300">
+                        <p class="text-xl leading-relaxed">
+                            I am a Staff-level Software Engineer with over a decade of experience designing and
+                            operating highly available distributed systems.
+                        </p>
+                        <p>
+                            Currently focused on enterprise-to-Big Tech narratives within the Public Sector, I
+                            specialize in Java ecosystems, asynchronously scalable architectures, and leading
+                            cross-functional engineering pods to deliver reliable, secure infrastructure for GovCloud
+                            and similar highly-regulated environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section (Hydrated via JSON) -->
+        <section id="view-resume"
+            class="spa-view hidden py-24 bg-slate-950 border-t border-slate-800 print:block print:py-0 print:border-none transition-all duration-300 ease-in-out">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-ends mb-12 print:hidden">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">Resume</h2>
+                        <div class="mt-2 w-16 h-1 bg-blue-600 rounded"></div>
+                    </div>
+                    <div>
+                        <!-- This link points to the PDF generated at build time -->
+                        <a href="/resume.pdf" download id="download-resume-btn"
+                            class="inline-flex items-center px-4 py-2 border border-slate-700 shadow-sm text-sm font-medium rounded-md text-slate-200 bg-slate-900 hover:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="-ml-1 mr-2 h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Container where main.js will render the resume -->
+                <div id="resume-container"
+                    class="bg-slate-900 rounded-xl shadow-sm border border-slate-800 p-8 md:p-12 print:shadow-none print:border-none print:p-0">
+                    <div class="text-center py-12 text-slate-400 animate-pulse">Loading resume data...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Design & Java Focus -->
+        <section id="view-system-design"
+            class="spa-view hidden py-24 bg-slate-900 border-t border-slate-800 print:hidden transition-all duration-300 ease-in-out">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">System & Architecture
+                    </h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Approaches to solving scale in modern
+                        GovCloud environments.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="p-8 bg-slate-950 rounded-2xl border border-slate-800 transition-shadow hover:shadow-md">
+                        <div class="w-12 h-12 bg-slate-950/30 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-50 mb-3">Distributed State Management</h3>
+                        <p class="text-slate-300">Event-driven architectures utilizing Kafka and asynchronous Java
+                            constructs to handle high-throughput transactional data consistently without locking.</p>
+                    </div>
+                    <div class="p-8 bg-slate-950 rounded-2xl border border-slate-800 transition-shadow hover:shadow-md">
+                        <div class="w-12 h-12 bg-slate-950/30 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-50 mb-3">Secure Public Sector Deployments</h3>
+                        <p class="text-slate-300">Zero-trust implementations and compliance-first infrastructure modeling
+                            targeting FedRAMP high boundaries while maintaining developer velocity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optional Coaching / CTA Section -->
+        <section id="view-coaching"
+            class="spa-view hidden py-24 bg-slate-950 text-white print:hidden transition-all duration-300 ease-in-out">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-balance">
+                <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">Staff-Level Interview Preparation</h2>
+                <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                    I periodically mentor senior Java engineers looking to level up to Staff or architect roles in Big
+                    Tech.
+                </p>
+                <a href="/contact"
+                    class="nav-link inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 border-transparent shadow-md">
+                    Inquire About Coaching
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="view-contact"
+            class="spa-view hidden py-24 bg-slate-950 print:hidden transition-all duration-300 ease-in-out">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold text-slate-50 sm:text-4xl mb-8">Get in Touch</h2>
+                <p class="text-lg text-slate-300 mb-10">
+                    Open to discussing Staff/Architect roles in the Big Tech Public Sector space.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <!-- Email -->
+                    <a href="mailto:saptarshi@example.com" class="text-slate-400 hover:text-blue-400 transition-colors">
+                        <span class="sr-only">Email</span>
+                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/saptarshidebnath" target="_blank" rel="noopener noreferrer"
+                        class="text-slate-400 hover:text-blue-400 transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/saptarshidebnath" target="_blank" rel="noopener noreferrer"
+                        class="text-slate-400 hover:text-blue-400 transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 py-8 border-t border-slate-800 text-center text-sm text-slate-400 print:hidden">
+        <p>&copy; <span id="year"></span> Saptarshi Debnath. Built with Vite & Preact.</p>
+    </footer>
+
+    <!-- Module script for logic & styling -->
+    <script type="module" src="/src/main.ts"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

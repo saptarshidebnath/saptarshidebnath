@@ -1,0 +1,27 @@
+{
+  "name": "homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "dev": "vite",
+    "build": "vite build && node scripts/generate-pdf.js",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "puppeteer": "^24.37.5",
+    "sass": "^1.97.3",
+    "serve-handler": "^6.1.6",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

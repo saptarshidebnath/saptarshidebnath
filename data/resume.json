@@ -1,0 +1,50 @@
+{
+    "name": "Saptarshi Debnath",
+    "contact": {
+        "email": "saptarshi@example.com",
+        "location": "Seattle, WA",
+        "linkedIn": "linkedin.com/in/saptarshidebnath",
+        "github": "github.com/saptarshidebnath"
+    },
+    "summary": "Staff Engineer with 10+ years of experience designing and scaling highly-available distributed systems for enterprise and Public Sector environments. Expertise in asynchronous Java, event-driven architectures (Kafka), and leading cross-functional pods to deliver zero-trust, compliance-first infrastructure.",
+    "experience": [
+        {
+            "role": "Staff Software Engineer",
+            "company": "Big Tech Public Sector",
+            "duration": "2020 - Present",
+            "highlights": [
+                "Architected a FedRAMP High compliant distributed event ingestion pipeline using Java 17 and Kafka, processing 5M+ events per minute with sub-second p99 latency.",
+                "Led a team of 8 engineers across 3 time zones to refactor a monolithic legacy authentication service into resilient, bounded contexts, reducing deployment lead time by 40%.",
+                "Established technical standards for asynchronous communication patterns, mentoring senior engineers and conducting regular system design reviews."
+            ]
+        },
+        {
+            "role": "Senior Java Developer",
+            "company": "Enterprise Inc.",
+            "duration": "2015 - 2020",
+            "highlights": [
+                "Migrated key financial transaction logic from synchronous REST to an asynchronous reactive stream model, improving system throughput by 3x during peak load.",
+                "Implemented circuit breakers and bulkheads to prevent cascading failures across 15+ microservices.",
+                "Reduced cloud infrastructure costs by 20% by optimizing JVM garbage collection tuning and container resource allocation."
+            ]
+        }
+    ],
+    "skills": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "PostgreSQL",
+        "React",
+        "AWS GovCloud",
+        "Distributed Systems",
+        "System Design",
+        "Kubernetes"
+    ],
+    "education": [
+        {
+            "degree": "M.S. in Computer Science",
+            "institution": "University of Technology",
+            "year": "2015"
+        }
+    ]
+}
