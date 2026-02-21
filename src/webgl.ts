@@ -53,13 +53,7 @@ export function initWebGL() {
             positions[i + 1] = 0; // y (will be animated)
             positions[i + 2] = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2); // z
 
-            // Create a subtle gradient from cyan to deep blue
-            const percentX = ix / AMOUNTX;
-            colorObj.setHSL(0.55 + percentX * 0.1, 0.9, 0.6); // Cyan to Blue gradient
-
-            colors[i] = colorObj.r;
-            colors[i + 1] = colorObj.g;
-            colors[i + 2] = colorObj.b;
+            // Colors will be updated dynamically later
 
             scales[j] = 1;
 
@@ -117,10 +111,12 @@ export function initWebGL() {
 
         const posAttr = particles.geometry.attributes.position;
         const scaleAttr = particles.geometry.attributes.scale;
-        if (!posAttr || !scaleAttr) return;
+        const colorAttr = particles.geometry.attributes.color; // Get color attribute
+        if (!posAttr || !scaleAttr || !colorAttr) return;
 
         const positions = posAttr.array as Float32Array;
         const scales = scaleAttr.array as Float32Array;
+        const colors = colorAttr.array as Float32Array; // Get color array
 
         let i = 0, j = 0;
 
@@ -136,6 +132,16 @@ export function initWebGL() {
                 scales[j] = (Math.sin((ix + count) * 0.3) + 1) * 3 +
                     (Math.sin((iy + count) * 0.5) + 1) * 3;
 
+                // Shift color through the palette based on time and position
+                const percentX = ix / AMOUNTX;
+                // Hue base shifts over time to cycle through rainbow. Add minor position variance.
+                const hue = (count * 0.05 + percentX * 0.15) % 1.0;
+
+                colorObj.setHSL(hue, 0.8, 0.6);
+                colors[i] = colorObj.r;
+                colors[i + 1] = colorObj.g;
+                colors[i + 2] = colorObj.b;
+
                 i += 3;
                 j++;
             }
@@ -143,6 +149,7 @@ export function initWebGL() {
 
         posAttr.needsUpdate = true;
         scaleAttr.needsUpdate = true;
+        colorAttr.needsUpdate = true;
 
         // Gentle rotation of the entire sea
         particles.rotation.y = Math.sin(count * 0.05) * 0.05;
