@@ -71,6 +71,7 @@ export function initWebGL() {
     const material = new THREE.ShaderMaterial({
         uniforms: {
             color: { value: new THREE.Color(0xffffff) },
+            globalAlpha: { value: 0.0 } // Start completely transparent
         },
         vertexShader: `
             attribute float scale;
@@ -85,6 +86,7 @@ export function initWebGL() {
         `,
         fragmentShader: `
             uniform vec3 color;
+            uniform float globalAlpha;
             varying vec3 vColor;
             void main() {
                 // Create soft glowing circle
@@ -93,7 +95,7 @@ export function initWebGL() {
                 if (ll > 0.5) discard;
                 // Soft edge
                 float alpha = (0.5 - ll) * 2.0; 
-                gl_FragColor = vec4(color * vColor, alpha * 0.8);
+                gl_FragColor = vec4(color * vColor, alpha * 0.8 * globalAlpha);
             }
         `,
         transparent: true,
@@ -105,6 +107,11 @@ export function initWebGL() {
     scene.add(particles);
 
     let count = 0;
+    // An independent time tracker for the long-term intensity cycle
+    let time = 0;
+
+    // Track the start time to calculate fade-in
+    const startTime = performance.now();
 
     function animate() {
         requestAnimationFrame(animate);
@@ -118,15 +125,21 @@ export function initWebGL() {
         const scales = scaleAttr.array as Float32Array;
         const colors = colorAttr.array as Float32Array; // Get color array
 
+        // Oscillate intensity between 0.2 (calm) and 1.0 (big waves)
+        // Using a very slow sine wave based on continuous time
+        const intensity = 0.6 + Math.sin(time * 0.1) * 0.4;
+
         let i = 0, j = 0;
 
         for (let ix = 0; ix < AMOUNTX; ix++) {
             for (let iy = 0; iy < AMOUNTY; iy++) {
-                // Complex intersecting sine waves for organic fluid motion
-                positions[i + 1] =
+                // Complex intersecting sine waves for organic fluid motion (slow motion)
+                // Mutiply the final height by the shifting intensity
+                positions[i + 1] = (
                     (Math.sin((ix + count) * 0.2) * 4) +
                     (Math.sin((iy + count) * 0.3) * 4) +
-                    (Math.cos((ix + iy + count * 2) * 0.1) * 2);
+                    (Math.cos((ix + iy + count * 2) * 0.1) * 2)
+                ) * intensity;
 
                 // Scale particles based on height to emphasize peaks (glow effect)
                 scales[j] = (Math.sin((ix + count) * 0.3) + 1) * 3 +
@@ -134,8 +147,8 @@ export function initWebGL() {
 
                 // Shift color through the palette based on time and position
                 const percentX = ix / AMOUNTX;
-                // Hue base shifts over time to cycle through rainbow. Add minor position variance.
-                const hue = (count * 0.05 + percentX * 0.15) % 1.0;
+                // Hue base shifts over time to cycle through rainbow. Add minor position variance. slower transition.
+                const hue = (count * 0.02 + percentX * 0.1) % 1.0;
 
                 colorObj.setHSL(hue, 0.8, 0.6);
                 colors[i] = colorObj.r;
@@ -151,10 +164,25 @@ export function initWebGL() {
         scaleAttr.needsUpdate = true;
         colorAttr.needsUpdate = true;
 
-        // Gentle rotation of the entire sea
-        particles.rotation.y = Math.sin(count * 0.05) * 0.05;
+        // Calculate fade-in effect: Fade in smoothly over the first 10 seconds using an ease-in curve (bezier-like)
+        const currentTime = performance.now();
+        const elapsedTime = (currentTime - startTime) / 1000; // in seconds
 
-        count += 0.03; // Animation speed
+        // Normalize time from 0 to 1 over 10 seconds
+        const t = Math.min(elapsedTime / 10.0, 1.0);
+
+        // Cubic ease-in curve (starts very slow, then accelerates)
+        const targetAlpha = t * t * t;
+
+        if (material.uniforms.globalAlpha) {
+            material.uniforms.globalAlpha.value = targetAlpha;
+        }
+
+        // Gentle rotation of the entire sea
+        particles.rotation.y = Math.sin(count * 0.02) * 0.02;
+
+        time += 0.01; // Continuous time for long-term cycles
+        count += 0.005; // Animation speed - reduced to be even more subtle
 
         renderer.render(scene, camera);
     }
