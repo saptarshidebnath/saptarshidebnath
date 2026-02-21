@@ -1,49 +1,65 @@
 {
     "name": "Saptarshi Debnath",
     "contact": {
-        "email": "saptarshi@example.com",
-        "location": "Seattle, WA",
+        "email": "saptarshidebnath@example.com",
+        "location": "Gaithersburg, MD",
         "linkedIn": "linkedin.com/in/saptarshidebnath",
         "github": "github.com/saptarshidebnath"
     },
-    "summary": "Staff Engineer with 10+ years of experience designing and scaling highly-available distributed systems for enterprise and Public Sector environments. Expertise in asynchronous Java, event-driven architectures (Kafka), and leading cross-functional pods to deliver zero-trust, compliance-first infrastructure.",
+    "summary": "Visionary Technical Architect and Staff Engineer with expansive expertise in designing, scaling, and modernizing high-latency, cloud-native distributed systems. Proven track record of leading architectural transformations, driving organizational engineering standards, and mentoring cross-functional teams to deliver highly available, zero-trust infrastructure. Seeking to leverage deep expertise in system design and microservices as a Principal Architect to drive enterprise-wide technical strategy.",
     "experience": [
         {
-            "role": "Staff Software Engineer",
-            "company": "Big Tech Public Sector",
+            "role": "Staff Engineer & System Design Architect",
+            "company": "Marriott International",
             "duration": "2020 - Present",
+            "web_summary": "Leading cloud-native microservices architecture and technical strategy for global, high-scale reservations and property management systems.",
             "highlights": [
-                "Architected a FedRAMP High compliant distributed event ingestion pipeline using Java 17 and Kafka, processing 5M+ events per minute with sub-second p99 latency.",
-                "Led a team of 8 engineers across 3 time zones to refactor a monolithic legacy authentication service into resilient, bounded contexts, reducing deployment lead time by 40%.",
-                "Established technical standards for asynchronous communication patterns, mentoring senior engineers and conducting regular system design reviews."
+                "Architecting and defining the technical vision for NextGen distributed systems serving millions of daily users with single-digit millisecond latency.",
+                "Spearheading the migration of monolithic legacy systems to resilient, containerized, cloud-native microservices using Spring Boot, AWS, and Kubernetes.",
+                "Establishing engineering standards and asynchronous communication patterns (Kafka) across multiple engineering pods.",
+                "Mentoring senior engineering teams on system design, distributed data patterns, operational excellence, and CI/CD best practices."
             ]
         },
         {
-            "role": "Senior Java Developer",
-            "company": "Enterprise Inc.",
-            "duration": "2015 - 2020",
+            "role": "Senior Software Engineer",
+            "company": "Marriott International",
+            "duration": "2017 - 2020",
+            "web_summary": "Developed scalable backend services, optimized cloud deployments, and implemented fault-tolerant data pipelines.",
             "highlights": [
-                "Migrated key financial transaction logic from synchronous REST to an asynchronous reactive stream model, improving system throughput by 3x during peak load.",
-                "Implemented circuit breakers and bulkheads to prevent cascading failures across 15+ microservices.",
-                "Reduced cloud infrastructure costs by 20% by optimizing JVM garbage collection tuning and container resource allocation."
+                "Designed and developed highly scalable, secure, and fault-tolerant RESTful microservices for enterprise integration.",
+                "Optimized JVM performance, database queries, and cloud resource allocation, reducing infrastructure costs by 15%.",
+                "Implemented circuit breakers, bulkheads, and centralized logging to ensure robust system observability and prevent cascading failures.",
+                "Collaborated with product and infrastructure teams to streamline DevOps workflows utilizing Jenkins, Git, and Docker."
+            ]
+        },
+        {
+            "role": "Senior Software Engineer",
+            "company": "Wipro",
+            "duration": "Oct 2015 - Sep 2017",
+            "web_summary": "Key member of the System Team acting as DevOps and Full Stack Engineer for enterprise modernization initiatives.",
+            "highlights": [
+                "Engineered full-stack solutions and orchestrated deployment pipelines using Java, Spring, Hibernate, and AWS.",
+                "Drove Agile adoption by integrating automated testing (Cucumber) and continuous integration (Jenkins) into the deployment lifecycle.",
+                "Migrated critical on-premise databases to managed cloud SQL/NoSQL solutions, improving read throughput by 3x."
             ]
         }
     ],
     "skills": [
-        "Java",
-        "Spring Boot",
-        "Kafka",
-        "PostgreSQL",
-        "React",
-        "AWS GovCloud",
+        "System Architecture",
         "Distributed Systems",
-        "System Design",
-        "Kubernetes"
+        "Cloud-Native Design",
+        "Java / Spring Boot",
+        "AWS (EC2, EKS, S3, RDS)",
+        "Docker & Kubernetes",
+        "Kafka & Event-Driven",
+        "NoSQL & PostgreSQL",
+        "DevOps & CI/CD",
+        "Agile Leadership"
     ],
     "education": [
         {
-            "degree": "M.S. in Computer Science",
-            "institution": "University of Technology",
+            "degree": "Bachelor of Technology (B-Tech), Computer Science and Engineering",
+            "institution": "West Bengal University of Technology",
             "year": "2015"
         }
     ]
