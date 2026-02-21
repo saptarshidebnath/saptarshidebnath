@@ -16,8 +16,8 @@ export function initWebGL() {
     }
 
     const scene = new THREE.Scene();
-    // Deep rich slate background to blend seamlessly into bg-slate-900
-    scene.fog = new THREE.FogExp2(0x0f172a, 0.003);
+    // Deep rich slate background to blend seamlessly into the theme
+    scene.fog = new THREE.FogExp2(0x0b1121, 0.003);
 
     const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 1, 1000);
     // Position camera dynamically looking across the "sea"
@@ -53,8 +53,6 @@ export function initWebGL() {
             positions[i + 1] = 0; // y (will be animated)
             positions[i + 2] = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2); // z
 
-            // Colors will be updated dynamically later
-
             scales[j] = 1;
 
             i += 3;
@@ -71,7 +69,7 @@ export function initWebGL() {
     const material = new THREE.ShaderMaterial({
         uniforms: {
             color: { value: new THREE.Color(0xffffff) },
-            globalAlpha: { value: 0.0 } // Start completely transparent
+            globalAlpha: { value: 0.0 }
         },
         vertexShader: `
             attribute float scale;
@@ -89,11 +87,9 @@ export function initWebGL() {
             uniform float globalAlpha;
             varying vec3 vColor;
             void main() {
-                // Create soft glowing circle
                 vec2 xy = gl_PointCoord.xy - vec2(0.5);
                 float ll = length(xy);
                 if (ll > 0.5) discard;
-                // Soft edge
                 float alpha = (0.5 - ll) * 2.0; 
                 gl_FragColor = vec4(color * vColor, alpha * 0.8 * globalAlpha);
             }
@@ -107,10 +103,7 @@ export function initWebGL() {
     scene.add(particles);
 
     let count = 0;
-    // An independent time tracker for the long-term intensity cycle
     let time = 0;
-
-    // Track the start time to calculate fade-in
     const startTime = performance.now();
 
     function animate() {
@@ -118,37 +111,35 @@ export function initWebGL() {
 
         const posAttr = particles.geometry.attributes.position;
         const scaleAttr = particles.geometry.attributes.scale;
-        const colorAttr = particles.geometry.attributes.color; // Get color attribute
+        const colorAttr = particles.geometry.attributes.color;
         if (!posAttr || !scaleAttr || !colorAttr) return;
 
         const positions = posAttr.array as Float32Array;
         const scales = scaleAttr.array as Float32Array;
-        const colors = colorAttr.array as Float32Array; // Get color array
+        const colors = colorAttr.array as Float32Array;
 
-        // Oscillate intensity between 0.2 (calm) and 1.0 (big waves)
-        // Using a very slow sine wave based on continuous time
         const intensity = 0.6 + Math.sin(time * 0.1) * 0.4;
 
         let i = 0, j = 0;
 
         for (let ix = 0; ix < AMOUNTX; ix++) {
             for (let iy = 0; iy < AMOUNTY; iy++) {
-                // Complex intersecting sine waves for organic fluid motion (slow motion)
-                // Mutiply the final height by the shifting intensity
                 positions[i + 1] = (
                     (Math.sin((ix + count) * 0.2) * 4) +
                     (Math.sin((iy + count) * 0.3) * 4) +
                     (Math.cos((ix + iy + count * 2) * 0.1) * 2)
                 ) * intensity;
 
-                // Scale particles based on height to emphasize peaks (glow effect)
                 scales[j] = (Math.sin((ix + count) * 0.3) + 1) * 3 +
                     (Math.sin((iy + count) * 0.5) + 1) * 3;
 
-                // Shift color through the palette based on time and position
                 const percentX = ix / AMOUNTX;
-                // Hue base shifts over time to cycle through rainbow. Add minor position variance. slower transition.
-                const hue = (count * 0.02 + percentX * 0.1) % 1.0;
+                let hue = (count * 0.02 + percentX * 0.1) % 1.0;
+
+                // Dynamic theme hue integration
+                if ((window as any).webglBaseHue !== undefined) {
+                    hue = ((window as any).webglBaseHue + percentX * 0.1) % 1.0;
+                }
 
                 colorObj.setHSL(hue, 0.8, 0.6);
                 colors[i] = colorObj.r;
@@ -164,25 +155,18 @@ export function initWebGL() {
         scaleAttr.needsUpdate = true;
         colorAttr.needsUpdate = true;
 
-        // Calculate fade-in effect: Fade in smoothly over the first 10 seconds using an ease-in curve (bezier-like)
-        const currentTime = performance.now();
-        const elapsedTime = (currentTime - startTime) / 1000; // in seconds
-
-        // Normalize time from 0 to 1 over 10 seconds
+        const elapsedTime = (performance.now() - startTime) / 1000;
         const t = Math.min(elapsedTime / 10.0, 1.0);
-
-        // Cubic ease-in curve (starts very slow, then accelerates)
         const targetAlpha = t * t * t;
 
         if (material.uniforms.globalAlpha) {
             material.uniforms.globalAlpha.value = targetAlpha;
         }
 
-        // Gentle rotation of the entire sea
         particles.rotation.y = Math.sin(count * 0.02) * 0.02;
 
-        time += 0.01; // Continuous time for long-term cycles
-        count += 0.005; // Animation speed - reduced to be even more subtle
+        time += 0.01;
+        count += 0.005;
 
         renderer.render(scene, camera);
     }
@@ -192,6 +176,14 @@ export function initWebGL() {
         camera.updateProjectionMatrix();
         renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     }
+
+    // Expose color sync to window
+    (window as any).updateWebGLColors = (colorHex: string) => {
+        const color = new THREE.Color(colorHex);
+        const hsl = { h: 0, s: 0, l: 0 };
+        color.getHSL(hsl);
+        (window as any).webglBaseHue = hsl.h;
+    };
 
     window.addEventListener('resize', onWindowResize);
     animate();

@@ -15,10 +15,11 @@
 </head>
 
 <body
-    class="bg-[#0b1121] text-slate-50 font-sans antialiased overflow-x-hidden pt-16 selection:bg-blue-400 selection:text-white">
+    class="theme-bg text-slate-50 font-sans antialiased overflow-x-hidden pt-16 selection:bg-blue-400 selection:text-white">
 
     <!-- Sticky Navigation -->
-    <header class="fixed top-0 w-full bg-[#0b1121]/80 backdrop-blur-md z-50 border-b border-white/10 print:hidden">
+    <header
+        class="fixed top-0 w-full bg-[var(--bg-primary)]/80 backdrop-blur-md z-50 border-b border-white/10 print:hidden">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="font-bold text-xl tracking-tight"><a href="#">SD.</a></div>
             <div class="hidden sm:flex space-x-8 nav-links">
@@ -50,7 +51,7 @@
             class="spa-view relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden print:min-h-0 print:py-8 transition-all duration-300 ease-in-out">
             <!-- WebGL Canvas Background -->
             <canvas id="hero-canvas"
-                class="absolute inset-0 w-full h-full -z-10 bg-gradient-to-br from-[#0b1121] to-[#040814] print:hidden"></canvas>
+                class="absolute inset-0 w-full h-full -z-10 bg-[var(--bg-primary)] print:hidden"></canvas>
 
             <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
                 <h1
@@ -79,9 +80,8 @@
 
 
 
-        <!-- Resume Section (Hydrated via JSON) -->
         <section id="view-resume"
-            class="spa-view hidden py-24 bg-slate-800 border-t border-slate-600 print:block print:py-0 print:border-none transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-[var(--bg-primary)] brightness-110 border-t border-white/10 print:block print:py-0 print:border-none transition-all duration-300 ease-in-out">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-ends mb-12 print:hidden">
                     <div>
@@ -105,7 +105,7 @@
 
                 <!-- Container where main.js will render the resume -->
                 <div id="resume-container"
-                    class="bg-slate-700 rounded-xl shadow-sm border border-slate-600 p-8 md:p-12 print:shadow-none print:border-none print:p-0">
+                    class="theme-card rounded-xl shadow-sm border p-8 md:p-12 print:shadow-none print:border-none print:p-0">
                     <div class="text-center py-12 text-slate-400 animate-pulse">Loading resume data...</div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
 
         <!-- System Design & Java Focus -->
         <section id="view-system-design"
-            class="spa-view hidden py-24 bg-slate-700 border-t border-slate-600 print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-[var(--bg-primary)] brightness-105 border-t border-white/10 print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">System & Architecture
@@ -124,7 +124,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div
-                        class="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
+                        class="p-8 theme-card rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
                         <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -137,7 +137,7 @@
                             constructs to handle high-throughput transactional data consistently without locking.</p>
                     </div>
                     <div
-                        class="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
+                        class="p-8 theme-card rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
                         <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -156,7 +156,7 @@
 
         <!-- Optional Coaching / CTA Section -->
         <section id="view-coaching"
-            class="spa-view hidden py-24 bg-slate-800 text-white print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-[var(--bg-primary)] brightness-110 text-white print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-balance">
                 <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">Staff-Level Interview Preparation</h2>
                 <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
@@ -172,7 +172,7 @@
 
         <!-- Contact Section -->
         <section id="view-contact"
-            class="spa-view hidden py-24 bg-slate-800 print:hidden transition-all duration-300 ease-in-out">
+            class="spa-view hidden py-24 bg-[var(--bg-primary)] brightness-110 print:hidden transition-all duration-300 ease-in-out">
             <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold text-slate-50 sm:text-4xl mb-8">Get in Touch</h2>
                 <p class="text-lg text-slate-300 mb-10">

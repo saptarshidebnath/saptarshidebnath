@@ -1,8 +1,12 @@
 import './style.scss';
 import { initWebGL } from './webgl';
+import { ThemeManager } from './theme-swapper';
 
 // Initialize the 3D hero background
 initWebGL();
+
+// Initialize the Theme Swapper
+new ThemeManager();
 
 interface ResumeJob {
     role: string;
