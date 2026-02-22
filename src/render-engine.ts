@@ -39,7 +39,7 @@ export function renderResumeHTML(resumeData: ResumeData): string {
     // Header / Summary
     html += `
         <div class="mb-10 text-center sm:text-left print:mb-6 print:text-left print:border-b-2 print:border-black print:pb-4">
-            <h3 class="text-2xl font-bold text-white print:text-black print:text-3xl print:font-serif">${resumeData.name}</h3>
+            <h3 class="text-5xl fancy-name text-white print:text-black print:text-5xl print:font-serif">${resumeData.name}</h3>
             <div class="mt-2 text-sm text-slate-400 flex flex-wrap justify-center sm:justify-start gap-4 print:mt-1 print:text-black">
                 <span class="print:hidden">
                     <button id="reveal-email" class="hover:text-blue-400 transition-colors cursor-pointer" data-e="${btoa(resumeData.contact.email)}">
@@ -73,22 +73,9 @@ export function renderResumeHTML(resumeData: ResumeData): string {
     if (resumeData.experience && resumeData.experience.length > 0) {
         html += `<h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-2 print:text-black print:text-lg print:border-b print:border-black print:uppercase print:tracking-wide">Experience</h4>`;
 
-        const currentYear = new Date().getFullYear();
-        const thresholdYear = currentYear - 10;
-
-        const recentExperience = resumeData.experience.filter((job: ResumeJob) => {
-            const yearMatch = job.duration.match(/\d{4}/g);
-            if (!yearMatch) return true;
-            const lastYear = job.duration.includes('Present') ? currentYear : Math.max(...yearMatch.map(Number));
-            return lastYear >= thresholdYear;
-        });
-
-        const olderExperience = resumeData.experience.filter((job: ResumeJob) => {
-            const yearMatch = job.duration.match(/\d{4}/g);
-            if (!yearMatch) return false;
-            const lastYear = job.duration.includes('Present') ? currentYear : Math.max(...yearMatch.map(Number));
-            return lastYear < thresholdYear;
-        });
+        // Show only the last 3 jobs in detail, everything else in Earlier Career
+        const recentExperience = resumeData.experience.slice(0, 3);
+        const olderExperience = resumeData.experience.slice(3);
 
         html += `<div class="space-y-8 print:space-y-4">`;
 

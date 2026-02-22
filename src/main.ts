@@ -89,6 +89,10 @@ async function renderResume() {
         console.error(err);
         container.innerHTML = `<div class="text-center py-12 text-red-500">Error loading resume data. Please try again later.</div>`;
     } finally {
+        // Wait for all fonts (including Alex Brush) to load before revealing
+        if ('fonts' in document) {
+            await document.fonts.ready;
+        }
         // Reveal the page after hydration is complete to prevent FOUC
         document.body.classList.remove('fouc-cloak');
     }

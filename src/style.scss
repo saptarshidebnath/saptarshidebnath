@@ -39,6 +39,10 @@ body {
     color: var(--text-secondary);
 }
 
+.fancy-name {
+    font-family: 'Alex Brush', cursive;
+    font-weight: 400;
+}
 
 @layer utilities {
     @media print {
