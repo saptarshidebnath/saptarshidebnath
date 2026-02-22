@@ -1,12 +1,8 @@
 import './style.scss';
 import { initWebGL } from './webgl';
-import { ThemeManager } from './theme-swapper';
 
 // Initialize the 3D hero background
 initWebGL();
-
-// Initialize the Theme Swapper
-new ThemeManager();
 
 interface ResumeJob {
     role: string;
@@ -47,7 +43,24 @@ async function renderResume() {
         const res = await fetch('/data/resume.json');
         if (!res.ok) throw new Error('Failed to load resume.json');
 
-        const resumeData = await res.json();
+        const resumeData: ResumeData = await res.json();
+
+        // Dynamically update SEO meta tags
+        document.title = `${resumeData.name} - Staff Engineer & System Design Architect`;
+
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', `${resumeData.name} - Staff Engineer`);
+
+        // Use a shortened version of the summary for the description (first sentence or up to ~150 chars)
+        const shortDescription = resumeData.summary.length > 150
+            ? resumeData.summary.substring(0, resumeData.summary.indexOf('.') + 1) || resumeData.summary.substring(0, 150) + '...'
+            : resumeData.summary;
+
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', shortDescription);
+
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', shortDescription);
 
         // Build HTML from JSON
         let html = '';
@@ -88,9 +101,29 @@ async function renderResume() {
         // Experience
         if (resumeData.experience && resumeData.experience.length > 0) {
             html += `<h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-2 print:text-black print:text-lg print:border-b print:border-black print:uppercase print:tracking-wide">Experience</h4>`;
+
+            const currentYear = new Date().getFullYear();
+            const thresholdYear = currentYear - 10;
+
+            const recentExperience = resumeData.experience.filter((job: any) => {
+                // Extract the end year or start year. "2020 - Present" -> 2026. "Oct 2015 - Sep 2017" -> 2017.
+                const yearMatch = job.duration.match(/\d{4}/g);
+                if (!yearMatch) return true;
+                const lastYear = job.duration.includes('Present') ? currentYear : Math.max(...yearMatch.map(Number));
+                return lastYear >= thresholdYear;
+            });
+
+            const olderExperience = resumeData.experience.filter((job: any) => {
+                const yearMatch = job.duration.match(/\d{4}/g);
+                if (!yearMatch) return false;
+                const lastYear = job.duration.includes('Present') ? currentYear : Math.max(...yearMatch.map(Number));
+                return lastYear < thresholdYear;
+            });
+
             html += `<div class="space-y-8 print:space-y-4">`;
 
-            resumeData.experience.forEach((job: ResumeJob) => {
+            // Render Recent Experience (Detailed)
+            recentExperience.forEach((job: ResumeJob) => {
                 html += `
                 <div class="prevent-print-break border-b border-slate-700/50 pb-6 mb-6 last:border-0 last:pb-0 last:mb-0 print:border-0 print:pb-0 print:mb-3">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2 print:mb-1">
@@ -104,6 +137,35 @@ async function renderResume() {
                 </div>
                 `;
             });
+
+            // Render Older Experience (Summarized for Web, Detailed for Print)
+            if (olderExperience.length > 0) {
+                html += `
+                <div class="pt-6 print:pt-4 print:border-t print:border-black/10">
+                    <h5 class="text-lg font-bold text-white mb-4 theme-text-accent print:text-black print:text-base print:mb-4">Earlier Career</h5>
+                    <div class="space-y-4 print:space-y-4">
+                        ${olderExperience.map((job: ResumeJob) => `
+                            <!-- Web: Compact summary -->
+                            <div class="print:hidden text-sm text-slate-400 border-l-2 border-slate-700 pl-4 py-1">
+                                <div class="font-bold text-slate-300">${job.role} at ${job.company}</div>
+                                <div>${job.duration}</div>
+                            </div>
+                            
+                            <!-- Print: Full details (identical to recent) -->
+                            <div class="hidden print:block prevent-print-break border-b border-slate-700/50 pb-6 mb-6 last:border-0 last:pb-0 last:mb-0 print:border-0 print:pb-0 print:mb-3">
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2 print:mb-1">
+                                    <h5 class="text-lg font-bold text-white print:text-black print:text-sm italic">${job.role} <span class="hidden print:inline">,</span> <span class="text-slate-400 font-normal print:text-black print:not-italic print:font-semibold"> ${job.company}</span></h5>
+                                    <span class="text-sm font-medium text-slate-400 mt-1 sm:mt-0 print:text-black print:italic print:text-xs">${job.duration}</span>
+                                </div>
+                                <ul class="list-disc list-outside ml-5 text-slate-300 space-y-2 marker:text-blue-500 print:text-black print:space-y-0.5 print:text-xs print:marker:text-black">
+                                    ${job.highlights.map((h: string) => `<li>${h}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                `;
+            }
             html += `</div>`;
         }
 

@@ -10,52 +10,112 @@
     "summary": "Visionary Technical Architect and Staff Engineer with expansive expertise in designing, scaling, and modernizing high-latency, cloud-native distributed systems. Proven track record of leading architectural transformations, driving organizational engineering standards, and mentoring cross-functional teams to deliver highly available, zero-trust infrastructure. Seeking to leverage deep expertise in system design and microservices as a Principal Architect to drive enterprise-wide technical strategy.",
     "experience": [
         {
-            "role": "Staff Engineer & System Design Architect",
-            "company": "Marriott International",
-            "duration": "2020 - Present",
-            "web_summary": "Leading cloud-native microservices architecture and technical strategy for global, high-scale reservations and property management systems.",
+            "role": "Senior Software Engineer (Staff-Level Role)",
+            "company": "Marriott International (Remote/Hybrid)",
+            "duration": "Nov 2023 - Present",
+            "web_summary": "Architecting global-scale infrastructure and driving engineering excellence across the organization.",
             "highlights": [
-                "Architecting and defining the technical vision for NextGen distributed systems serving millions of daily users with single-digit millisecond latency.",
-                "Spearheading the migration of monolithic legacy systems to resilient, containerized, cloud-native microservices using Spring Boot, AWS, and Kubernetes.",
-                "Establishing engineering standards and asynchronous communication patterns (Kafka) across multiple engineering pods.",
-                "Mentoring senior engineering teams on system design, distributed data patterns, operational excellence, and CI/CD best practices."
+                "Leading technical strategy and architectural design for high-scale software infrastructure, supporting millions of transactions on hybrid cloud environments.",
+                "Serving as an organizational multiplier by defining software design patterns and best practices adopted by 12+ cross-functional engineering pods.",
+                "Directing large-scale performance optimizations for distributed microservices, ensuring single-digit millisecond latency for critical path APIs.",
+                "Mentoring senior engineers and advocating for zero-trust infrastructure and cloud-native resilience standards.",
+                "Technologies: Java, Cloud Infrastructure, Distributed Systems, Microservices Architecture."
+            ]
+        },
+        {
+            "role": "Senior Specialist (Technical Architect)",
+            "company": "Deloitte (Hybrid)",
+            "duration": "Feb 2023 - Nov 2023",
+            "web_summary": "Architected secure, enterprise-grade solutions and spearheaded digital transformation initiatives for high-visibility clients.",
+            "highlights": [
+                "Designed and delivered complex enterprise software solutions with a focus on scalability and strict security compliance.",
+                "Spearheaded digital transformation initiatives, modernizing legacy infrastructure into resilient cloud-native services.",
+                "Mentored cross-functional engineering teams on modern development methodologies and high-scale architectural standards."
+            ]
+        },
+        {
+            "role": "Technical Architect / Lead",
+            "company": "Mindtree Ltd (Bethesda, MD)",
+            "duration": "Jan 2019 - Dec 2022",
+            "web_summary": "Spearheaded the transition of monolithic reservation systems to reactive, cloud-native microservices.",
+            "highlights": [
+                "Spearheaded the strategic transition of global monolithic applications to resilient, reactive microservices using Play/Akka and Spring WebFlux.",
+                "Designed and scaled high-performance RESTful microservices for global reservations and property management systems.",
+                "Championed organizational performance standards, tuning enterprise APIs to achieve single-digit millisecond latency.",
+                "Technologies: Java 11/8, Play/Akka, Spring WebFlux, Couchbase, Red Hat OpenShift."
+            ]
+        },
+        {
+            "role": "Technical Lead",
+            "company": "Mindtree Ltd (Scottsdale, AZ)",
+            "duration": "Sep 2017 - Dec 2018",
+            "web_summary": "Managed a complex travel portal microservices ecosystem and automated deployment pipelines.",
+            "highlights": [
+                "Led the maintenance and feature development of a travel portal ecosystem consisting of 8 distinct microservices.",
+                "Orchestrated automated testing and deployment strategies using Selenium, Jenkins, and Docker.",
+                "Managed deployments across multiple environments (DEV, QA, PROD) using Red Hat OpenShift.",
+                "Technologies: Java 8, Spring Boot, ActiveMQ, Cassandra, PostgreSQL, Redis, Angular 2."
             ]
         },
         {
             "role": "Senior Software Engineer",
-            "company": "Marriott International",
-            "duration": "2017 - 2020",
-            "web_summary": "Developed scalable backend services, optimized cloud deployments, and implemented fault-tolerant data pipelines.",
+            "company": "Wipro Technologies (Richmond, VA)",
+            "duration": "Oct 2015 - Aug 2017",
+            "web_summary": "Key contributor to system automation and AWS infrastructure certification initiatives.",
             "highlights": [
-                "Designed and developed highly scalable, secure, and fault-tolerant RESTful microservices for enterprise integration.",
-                "Optimized JVM performance, database queries, and cloud resource allocation, reducing infrastructure costs by 15%.",
-                "Implemented circuit breakers, bulkheads, and centralized logging to ensure robust system observability and prevent cascading failures.",
-                "Collaborated with product and infrastructure teams to streamline DevOps workflows utilizing Jenkins, Git, and Docker."
+                "Built an automated Software Intake Form workflow using AngularJS and Spring MVC.",
+                "Certified AWS AMI images using Java 8 and Cucumber/Gherkin to ensure security and compliance.",
+                "Automated virtual development environments utilizing Vagrant and VirtualBox.",
+                "Technologies: Java 8, Shell Scripting, Vagrant, MongoDB, Node JS."
             ]
         },
         {
-            "role": "Senior Software Engineer",
-            "company": "Wipro",
-            "duration": "Oct 2015 - Sep 2017",
-            "web_summary": "Key member of the System Team acting as DevOps and Full Stack Engineer for enterprise modernization initiatives.",
+            "role": "Senior Software Engineer / Team Lead",
+            "company": "Wipro Technologies (East Hanover, NJ)",
+            "duration": "Nov 2011 - Aug 2017",
+            "web_summary": "Onsite Coordinator and Lead for digital marketing and e-commerce platforms.",
             "highlights": [
-                "Engineered full-stack solutions and orchestrated deployment pipelines using Java, Spring, Hibernate, and AWS.",
-                "Drove Agile adoption by integrating automated testing (Cucumber) and continuous integration (Jenkins) into the deployment lifecycle.",
-                "Migrated critical on-premise databases to managed cloud SQL/NoSQL solutions, improving read throughput by 3x."
+                "Acted as Onsite Coordinator/Team Lead for the maintenance of oncology e-marketing websites.",
+                "Developed and optimized web platforms based on a proprietary Struts 1.x framework.",
+                "Managed cross-functional communications between onsite clients and offshore teams.",
+                "Technologies: Java 1.7, JSP, jQuery, Mootools."
+            ]
+        },
+        {
+            "role": "Software Engineer",
+            "company": "Wipro Technologies (Bangalore, India)",
+            "duration": "Sep 2009 - Oct 2011",
+            "web_summary": "Developed custom reporting solutions for large-scale banking infrastructure.",
+            "highlights": [
+                "Generated and transmitted highly customized reports between bank infrastructure and clients.",
+                "Developed complex data extraction and reporting logic using Mainframe FOCUS and Actuate.",
+                "Technologies: Mainframe FOCUS, DB2, VSAM, JCL."
+            ]
+        },
+        {
+            "role": "Trainee Engineer",
+            "company": "Objectsol Technologies (Kolkata, India)",
+            "duration": "Mar 2009 - Jul 2009",
+            "web_summary": "Initial exploration into mobile game development and OpenGL graphics.",
+            "highlights": [
+                "Developed an OpenGL ES 1.1 based iPhone game 'Crazee Cube'.",
+                "Gained foundational experience in C++, iOS SDK, and computer graphics."
             ]
         }
     ],
     "skills": [
         "System Architecture",
+        "Software Infrastructure",
+        "Software Design",
         "Distributed Systems",
         "Cloud-Native Design",
-        "Java / Spring Boot",
-        "AWS (EC2, EKS, S3, RDS)",
+        "Java / Spring / Akka",
+        "AWS & OpenShift",
         "Docker & Kubernetes",
         "Kafka & Event-Driven",
-        "NoSQL & PostgreSQL",
+        "NoSQL (Couchbase, Cassandra)",
         "DevOps & CI/CD",
-        "Agile Leadership"
+        "Performance Tuning"
     ],
     "education": [
         {

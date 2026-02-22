@@ -51,35 +51,51 @@ import { existsSync, mkdirSync } from 'fs';
 
         console.log('Local server running on port 3000 for PDF generation');
 
-        // Go to the local server
-        await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' });
+        // Go to the local server, specifically the resume route
+        await page.goto('http://localhost:3000/resume', { waitUntil: 'networkidle0' });
 
-        // Wait for the dynamic fetch to complete and render
-        await page.waitForSelector('#resume-container .prevent-print-break', { timeout: 10000 });
+        // Wait for the dynamic fetch to complete and render the resume container
+        await page.waitForSelector('#resume-container .prevent-print-break', { visible: true, timeout: 15000 });
 
-        // Hide specific elements we don't want in the PDF that Tailwind print macros might miss
+        // Polish the view for print
         await page.evaluate(() => {
-            // Ensure the main layout drops padding that exists for the web hero
-            document.body.style.paddingTop = '0';
+            // Force a lighter theme for the screenshot/PDF capture
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
 
-            // Re-render specifically for print if needed, but our Tailwind @media print should handle it
-            const resumeSection = document.getElementById('resume-container');
+            const resumeSection = document.getElementById('view-resume');
             if (resumeSection) {
-                // Force pure white background and remove slate/dark theme overlays
-                resumeSection.className = 'p-8 m-0 bg-white text-black';
+                resumeSection.classList.remove('hidden'); // Ensure it's not hidden by SPA logic
+                resumeSection.style.display = 'block';
+                resumeSection.style.backgroundColor = 'white';
+                resumeSection.style.color = 'black';
 
-                // Aggressively strip any white/light text classes from ALL children
-                const allElements = resumeSection.querySelectorAll('*');
-                allElements.forEach(el => {
-                    // Remove classes that force light text or dark backgrounds
-                    el.className = el.className.replace(/\b(text-white|text-slate-\d+|bg-slate-\d+|bg-blue-\d+\/\d+|bg-white\/\d+|border-slate-\d+)\b/g, '');
-                    // Force text-black
-                    el.classList.add('text-black');
+                // Hide ALL other sections
+                document.querySelectorAll('section:not(#view-resume)').forEach(s => {
+                    s.style.display = 'none';
                 });
 
-                // isolate the resume section container for printing
-                document.body.innerHTML = resumeSection.outerHTML;
-                document.body.className = 'bg-white text-black print:bg-white print:text-black font-serif'; // Reset body classes for traditional look
+                // Hide header/footer/particles
+                document.querySelectorAll('header, footer, canvas').forEach(el => {
+                    el.style.display = 'none';
+                });
+
+                // Clear out the dark theme cards and text specifically
+                const all = resumeSection.querySelectorAll('*');
+                all.forEach(el => {
+                    const element = el;
+                    element.style.color = 'black';
+                    element.style.backgroundColor = 'transparent';
+                    element.style.borderColor = '#ccc';
+                    element.style.backgroundImage = 'none';
+                    element.style.boxShadow = 'none';
+                    element.style.backdropFilter = 'none';
+
+                    // Specific overrides for headers to be bolder in black
+                    if (element.tagName.startsWith('H')) {
+                        element.style.color = 'black';
+                    }
+                });
             }
         });
 

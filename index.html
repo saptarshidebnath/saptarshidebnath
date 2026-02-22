@@ -9,8 +9,11 @@
     <meta property="og:title" content="Saptarshi Debnath - Staff Engineer" />
     <meta property="og:description"
         content="Staff Engineer specializing in System Design and Big Tech Public Sector architecture." />
+    <meta name="description"
+        content="Staff Engineer specializing in System Design and Big Tech Public Sector architecture." />
     <!-- Replace with an actual URL later -->
     <meta property="og:image" content="https://saptarshidebnath.com/og-image.jpg" />
+    <link rel="canonical" href="https://saptarshidebnath.com/" />
     <meta name="theme-color" content="#1e293b" />
 </head>
 
@@ -21,13 +24,12 @@
     <header
         class="fixed top-0 w-full bg-[var(--bg-primary)]/80 backdrop-blur-md z-50 border-b border-white/10 print:hidden">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tight"><a href="#">SD.</a></div>
+            <div class="font-bold text-xl tracking-tight"><a href="/"
+                    class="nav-link hover:text-blue-400 transition-colors">SD.</a></div>
             <div class="hidden sm:flex space-x-8 nav-links">
                 <a href="/" class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Home</a>
                 <a href="/resume" class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Resume</a>
-                <a href="/system-design"
-                    class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">System
-                    Design</a>
+
                 <a href="/contact"
                     class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Contact</a>
             </div>
@@ -111,48 +113,7 @@
             </div>
         </section>
 
-        <!-- System Design & Java Focus -->
-        <section id="view-system-design"
-            class="spa-view hidden py-24 bg-[var(--bg-primary)] brightness-105 border-t border-white/10 print:hidden transition-all duration-300 ease-in-out">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-extrabold text-slate-50 tracking-tight sm:text-4xl">System & Architecture
-                    </h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Approaches to solving scale in modern
-                        GovCloud environments.</p>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div
-                        class="p-8 theme-card rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
-                        <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-50 mb-3">Distributed State Management</h3>
-                        <p class="text-slate-300">Event-driven architectures utilizing Kafka and asynchronous Java
-                            constructs to handle high-throughput transactional data consistently without locking.</p>
-                    </div>
-                    <div
-                        class="p-8 theme-card rounded-2xl transition-all hover:bg-white/10 hover:shadow-xl hover:-translate-y-1 cursor-default">
-                        <div class="w-12 h-12 bg-slate-800/30 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-50 mb-3">Secure Public Sector Deployments</h3>
-                        <p class="text-slate-300">Zero-trust implementations and compliance-first infrastructure
-                            modeling
-                            targeting FedRAMP high boundaries while maintaining developer velocity.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Optional Coaching / CTA Section -->
         <section id="view-coaching"
@@ -189,7 +150,7 @@
                         </svg>
                     </a>
                     <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/saptarshidebnath" target="_blank" rel="noopener noreferrer"
+                    <a href="https://linkedin.com/in/saptarshidebnath" target="_blank" rel="me noopener noreferrer"
                         class="text-slate-400 hover:text-blue-400 transition-colors">
                         <span class="sr-only">LinkedIn</span>
                         <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +159,7 @@
                         </svg>
                     </a>
                     <!-- GitHub -->
-                    <a href="https://github.com/saptarshidebnath" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/saptarshidebnath" target="_blank" rel="me noopener noreferrer"
                         class="text-slate-400 hover:text-blue-400 transition-colors">
                         <span class="sr-only">GitHub</span>
                         <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">

@@ -16,8 +16,8 @@ export function initWebGL() {
     }
 
     const scene = new THREE.Scene();
-    // Deep rich slate background to blend seamlessly into the theme
-    scene.fog = new THREE.FogExp2(0x0b1121, 0.003);
+    // Neutral dark background for Soft Minimalist
+    scene.fog = new THREE.FogExp2(0x171717, 0.003);
 
     const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 1, 1000);
     // Position camera dynamically looking across the "sea"
@@ -134,12 +134,8 @@ export function initWebGL() {
                     (Math.sin((iy + count) * 0.5) + 1) * 3;
 
                 const percentX = ix / AMOUNTX;
-                let hue = (count * 0.02 + percentX * 0.1) % 1.0;
-
-                // Dynamic theme hue integration
-                if ((window as any).webglBaseHue !== undefined) {
-                    hue = ((window as any).webglBaseHue + percentX * 0.1) % 1.0;
-                }
+                // Restore dynamic hue shifting (rainbow effect)
+                let hue = (count * 0.05 + percentX * 0.1) % 1.0;
 
                 colorObj.setHSL(hue, 0.8, 0.6);
                 colors[i] = colorObj.r;
@@ -176,14 +172,6 @@ export function initWebGL() {
         camera.updateProjectionMatrix();
         renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     }
-
-    // Expose color sync to window
-    (window as any).updateWebGLColors = (colorHex: string) => {
-        const color = new THREE.Color(colorHex);
-        const hsl = { h: 0, s: 0, l: 0 };
-        color.getHSL(hsl);
-        (window as any).webglBaseHue = hsl.h;
-    };
 
     window.addEventListener('resize', onWindowResize);
     animate();
