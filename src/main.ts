@@ -1,20 +1,41 @@
 import './style.scss';
 import { initWebGL } from './webgl';
-import { renderResumeHTML, renderHeroHTML, renderSocialLinksHTML, type ResumeData } from './render-engine';
+import { renderResumeHTML, renderHeroHTML, renderSocialLinksHTML, renderContactHTML, type ResumeData } from './render-engine';
 
 // Initialize the 3D hero background
 initWebGL();
 
+// Helper to handle contact info reveal
+function setupRevealListener(id: string, type: 'email' | 'phone') {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const originalHTML = el.innerHTML;
+    const svgIcon = originalHTML.match(/<svg.*?>.*?<\/svg>/s)?.[0] || '';
+
+    el.addEventListener('click', () => {
+        const encoded = el.getAttribute(type === 'email' ? 'data-e' : 'data-p');
+        if (encoded) {
+            const val = atob(encoded);
+            if (type === 'email') {
+                el.outerHTML = `<a href="mailto:${val}" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">${svgIcon}<span>${val}</span></a>`;
+            } else {
+                const cleanPhone = val.replace(/\D/g, '');
+                el.outerHTML = `<a href="tel:${cleanPhone}" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">${svgIcon}<span>${val}</span></a>`;
+            }
+        }
+    });
+}
+
 // Fetch and render the resume JSON
 async function renderResume() {
-    const container = document.getElementById('resume-container');
+    const resumeContainer = document.getElementById('resume-container');
     const heroSection = document.getElementById('view-home');
-    const socialLinks = document.querySelector('#view-contact .flex.justify-center.space-x-6');
+    const contactContainer = document.getElementById('contact-container');
 
-    if (!container) return;
+    if (!resumeContainer) return;
 
     try {
-        // Fetch raw JSON from public/data or relative path
         const res = await fetch('/data/resume.json');
         if (!res.ok) throw new Error('Failed to load resume.json');
 
@@ -22,11 +43,9 @@ async function renderResume() {
 
         // Dynamically update SEO meta tags
         document.title = `${resumeData.name} - Staff Engineer & System Design Architect`;
-
         const ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) ogTitle.setAttribute('content', `${resumeData.name} - Staff Engineer`);
 
-        // Use a shortened version of the summary for the description (first sentence or up to ~150 chars)
         const shortDescription = resumeData.summary.length > 150
             ? resumeData.summary.substring(0, resumeData.summary.indexOf('.') + 1) || resumeData.summary.substring(0, 150) + '...'
             : resumeData.summary;
@@ -37,45 +56,24 @@ async function renderResume() {
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute('content', shortDescription);
 
-        // Hydrate Hero Section
+        // Hydrate Sections
         if (heroSection) renderHeroHTML(heroSection, resumeData);
+        if (contactContainer) contactContainer.innerHTML = renderContactHTML(resumeData);
+        resumeContainer.innerHTML = renderResumeHTML(resumeData);
 
-        // Hydrate Social Links
-        if (socialLinks) socialLinks.innerHTML = renderSocialLinksHTML(resumeData);
+        // Bind reveal listeners for Resume header
+        setupRevealListener('reveal-email', 'email');
+        setupRevealListener('reveal-phone', 'phone');
 
-        // Build HTML from JSON using the Rendering Engine
-        container.innerHTML = renderResumeHTML(resumeData);
+        // Bind reveal listeners for Contact page
+        setupRevealListener('reveal-email-contact', 'email');
+        setupRevealListener('reveal-phone-contact', 'phone');
 
-        // Add event listeners for reveal buttons
-        const revealPhone = document.getElementById('reveal-phone');
-        if (revealPhone) {
-            revealPhone.addEventListener('click', () => {
-                const encoded = revealPhone.getAttribute('data-p');
-                if (encoded) {
-                    const phone = atob(encoded);
-                    const cleanPhone = phone.replace(/\D/g, '');
-                    revealPhone.outerHTML = `<a href="tel:${cleanPhone}" class="text-blue-400 hover:text-blue-300 transition-colors">${phone}</a>`;
-                }
-            });
-        }
-
-        const revealEmail = document.getElementById('reveal-email');
-        if (revealEmail) {
-            revealEmail.addEventListener('click', () => {
-                const encoded = revealEmail.getAttribute('data-e');
-                if (encoded) {
-                    const email = atob(encoded);
-                    revealEmail.outerHTML = `<a href="mailto:${email}" class="text-blue-400 hover:text-blue-300 transition-colors">${email}</a>`;
-                }
-            });
-        }
-
-        // Add event listener for PDF download (obfuscated from crawlers)
+        // PDF Download
         const downloadBtn = document.getElementById('download-resume-btn');
         if (downloadBtn) {
             downloadBtn.addEventListener('click', () => {
-                // Construct path in JS so it's not in the static HTML
-                const filename = 'saptarshi-debnath.pdf';
+                const filename = `${resumeData.name.toLowerCase().replace(/\s+/g, '-')}.pdf`;
                 const link = document.createElement('a');
                 link.href = `/${filename}`;
                 link.download = filename;
@@ -87,9 +85,11 @@ async function renderResume() {
 
     } catch (err) {
         console.error(err);
-        container.innerHTML = `<div class="text-center py-12 text-red-500">Error loading resume data. Please try again later.</div>`;
+        if (resumeContainer) {
+            resumeContainer.innerHTML = `<div class="text-center py-12 text-red-500">Error loading resume data. Please try again later.</div>`;
+        }
     } finally {
-        // Wait for all fonts (including Alex Brush) to load before revealing
+        // Wait for all fonts to load before revealing
         if ('fonts' in document) {
             await document.fonts.ready;
         }
@@ -97,6 +97,7 @@ async function renderResume() {
         document.body.classList.remove('fouc-cloak');
     }
 }
+
 
 let isNavigating = false;
 
