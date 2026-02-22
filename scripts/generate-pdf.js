@@ -60,40 +60,56 @@ import { existsSync, mkdirSync } from 'fs';
         // Polish the view for print
         await page.evaluate(() => {
             // Force a lighter theme for the screenshot/PDF capture
+            const html = document.documentElement;
+            html.style.backgroundColor = 'white';
+            html.style.color = 'black';
+
             document.body.style.backgroundColor = 'white';
             document.body.style.color = 'black';
+            document.body.style.overflow = 'hidden'; // Avoid accidental scrollbars
 
             const resumeSection = document.getElementById('view-resume');
-            if (resumeSection) {
-                resumeSection.classList.remove('hidden'); // Ensure it's not hidden by SPA logic
-                resumeSection.style.display = 'block';
-                resumeSection.style.backgroundColor = 'white';
-                resumeSection.style.color = 'black';
+            const container = document.getElementById('resume-container');
 
-                // Hide ALL other sections
-                document.querySelectorAll('section:not(#view-resume)').forEach(s => {
-                    s.style.display = 'none';
+            if (resumeSection && container) {
+                resumeSection.classList.remove('hidden');
+                resumeSection.style.setProperty('display', 'block', 'important');
+                resumeSection.style.setProperty('background-color', 'white', 'important');
+                resumeSection.style.setProperty('color', 'black', 'important');
+                resumeSection.style.setProperty('padding', '0', 'important');
+                resumeSection.style.setProperty('margin', '0', 'important');
+                resumeSection.style.setProperty('brightness', '1', 'important');
+
+                // Explicitly clear container styles and prevent the "blue glow" shadow
+                container.style.setProperty('background-color', 'white', 'important');
+                container.style.setProperty('color', 'black', 'important');
+                container.style.setProperty('box-shadow', 'none', 'important');
+                container.style.setProperty('border', 'none', 'important');
+                container.style.setProperty('outline', 'none', 'important');
+                container.style.setProperty('background-image', 'none', 'important');
+                container.style.setProperty('padding', '0', 'important');
+
+                // Hide ALL other sections and potential overlapping elements
+                document.querySelectorAll('section:not(#view-resume), header, footer, canvas, button:not(.hidden-print), .print\\:hidden').forEach(el => {
+                    el.style.setProperty('display', 'none', 'important');
                 });
 
-                // Hide header/footer/particles
-                document.querySelectorAll('header, footer, canvas').forEach(el => {
-                    el.style.display = 'none';
-                });
-
-                // Clear out the dark theme cards and text specifically
-                const all = resumeSection.querySelectorAll('*');
+                // Clear out ALL thematic styles recursively
+                const all = container.querySelectorAll('*');
                 all.forEach(el => {
                     const element = el;
-                    element.style.color = 'black';
-                    element.style.backgroundColor = 'transparent';
-                    element.style.borderColor = '#ccc';
-                    element.style.backgroundImage = 'none';
-                    element.style.boxShadow = 'none';
-                    element.style.backdropFilter = 'none';
+                    element.style.setProperty('color', 'black', 'important');
+                    element.style.setProperty('background-color', 'transparent', 'important');
+                    element.style.setProperty('border-color', 'transparent', 'important');
+                    element.style.setProperty('background-image', 'none', 'important');
+                    element.style.setProperty('box-shadow', 'none', 'important');
+                    element.style.setProperty('outline', 'none', 'important');
+                    element.style.setProperty('backdrop-filter', 'none', 'important');
+                    element.style.setProperty('text-shadow', 'none', 'important');
 
-                    // Specific overrides for headers to be bolder in black
                     if (element.tagName.startsWith('H')) {
-                        element.style.color = 'black';
+                        element.style.setProperty('color', 'black', 'important');
+                        element.style.setProperty('font-weight', 'bold', 'important');
                     }
                 });
             }
@@ -103,6 +119,7 @@ import { existsSync, mkdirSync } from 'fs';
         await new Promise(r => setTimeout(r, 500));
 
         const pdfPath = resolve('public', 'saptarshi-debnath.pdf');
+        const distPdfPath = resolve('dist', 'saptarshi-debnath.pdf');
 
         await page.pdf({
             path: pdfPath,
@@ -116,7 +133,11 @@ import { existsSync, mkdirSync } from 'fs';
             }
         });
 
-        console.log(`PDF generated successfully at: ${pdfPath}`);
+        // Ensure the PDF is also in dist/ for deployment
+        const { copyFileSync } = await import('fs');
+        copyFileSync(pdfPath, distPdfPath);
+
+        console.log(`PDF generated successfully at: ${pdfPath} and copied to ${distPdfPath}`);
 
         server.close();
     } catch (error) {

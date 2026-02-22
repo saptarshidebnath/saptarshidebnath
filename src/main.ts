@@ -99,6 +99,19 @@ let isNavigating = false;
 // Custom SPA Router
 function handleRoute() {
     if (isNavigating) return;
+
+    // Support for GitHub Pages SPA redirect hack (404.html)
+    (function (l) {
+        if (l.search[1] === 'p' && l.search[2] === '=') {
+            const decoded = l.search.slice(3).replace(/~and~/g, '&');
+            const path = decoded.split('&q=')[0];
+            const query = decoded.split('&q=')[1] || '';
+            window.history.replaceState(null, '',
+                l.pathname.slice(0, -1) + (path ? '/' + path : '') + (query ? '?' + query : '') + l.hash
+            );
+        }
+    }(window.location));
+
     const path = window.location.pathname;
 
     // Default to home if root

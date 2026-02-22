@@ -152,7 +152,7 @@ export function initWebGL() {
         colorAttr.needsUpdate = true;
 
         const elapsedTime = (performance.now() - startTime) / 1000;
-        const t = Math.min(elapsedTime / 10.0, 1.0);
+        const t = Math.min(elapsedTime / 2.0, 1.0);
         const targetAlpha = t * t * t;
 
         if (material.uniforms.globalAlpha) {
