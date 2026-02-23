@@ -2,7 +2,7 @@
     "name": "Saptarshi Debnath",
     "contact": {
         "email": "saptarshi.devnath@gmail.com",
-        "location": "Gaithersburg, MD",
+        "location": "Washington, DC",
         "linkedIn": "https://linkedin.com/in/saptarshidebnath",
         "github": "https://github.com/saptarshidebnath",
         "phone": "+1 (973)-348-5557"
@@ -43,17 +43,17 @@
             "highlights": [
                 "Spearheaded the strategic transition of global monolithic applications to resilient, reactive microservices using Play/Akka and Spring WebFlux.",
                 "Designed and scaled high-performance RESTful microservices for global reservations and property management systems.",
-                "Championed organizational performance standards, tuning enterprise APIs to achieve single-digit millisecond latency.",
+                "Championed organizational performance standards, tuning enterprise APIs to achieve sub-second latency.",
                 "Technologies: Java 11/8, Play/Akka, Spring WebFlux, Couchbase, Red Hat OpenShift."
             ]
         },
         {
-            "role": "Technical Lead",
-            "company": "Mindtree Ltd (Scottsdale, AZ)",
+            "role": "Senior Software Engineer / Technical Lead",
+            "company": "Mindtree Ltd (Client: Amex GBT)",
             "duration": "Sep 2017 - Dec 2018",
             "web_summary": "Managed a complex travel portal microservices ecosystem and automated deployment pipelines.",
             "highlights": [
-                "Led the maintenance and feature development of a travel portal ecosystem consisting of 8 distinct microservices.",
+                "Worked on the maintenance and feature development of a travel portal ecosystem consisting of 8 distinct microservices.",
                 "Orchestrated automated testing and deployment strategies using Selenium, Jenkins, and Docker.",
                 "Managed deployments across multiple environments (DEV, QA, PROD) using Red Hat OpenShift.",
                 "Technologies: Java 8, Spring Boot, ActiveMQ, Cassandra, PostgreSQL, Redis, Angular 2."
@@ -61,7 +61,7 @@
         },
         {
             "role": "Senior Software Engineer",
-            "company": "Wipro Technologies (Richmond, VA)",
+            "company": "Wipro Technologies (Client: Capital One)",
             "duration": "Oct 2015 - Aug 2017",
             "web_summary": "Key contributor to system automation and AWS infrastructure certification initiatives.",
             "highlights": [
@@ -73,7 +73,7 @@
         },
         {
             "role": "Senior Software Engineer / Team Lead",
-            "company": "Wipro Technologies (East Hanover, NJ)",
+            "company": "Wipro Technologies (Client: Novartis)",
             "duration": "Nov 2011 - Aug 2017",
             "web_summary": "Onsite Coordinator and Lead for digital marketing and e-commerce platforms.",
             "highlights": [
@@ -85,9 +85,9 @@
         },
         {
             "role": "Software Engineer",
-            "company": "Wipro Technologies (Bangalore, India)",
+            "company": "Wipro Technologies (Client: Bank Of New York Mellon)",
             "duration": "Sep 2009 - Oct 2011",
-            "web_summary": "Developed custom reporting solutions for large-scale banking infrastructure.",
+            "web_summary": "Developed custom reporting solutions for large scale banking infrastructure.",
             "highlights": [
                 "Generated and transmitted highly customized reports between bank infrastructure and clients.",
                 "Developed complex data extraction and reporting logic using Mainframe FOCUS and Actuate.",
@@ -112,10 +112,11 @@
         "Distributed Systems",
         "Cloud-Native Design",
         "Java / Spring / Akka",
+        "Asynchronous Java Programming",
         "AWS & OpenShift",
         "Docker & Kubernetes",
         "Kafka & Event-Driven",
-        "NoSQL (Couchbase, Cassandra)",
+        "NoSQL (Couchbase, Cassandra, MongoDB, DocumentDB)",
         "DevOps & CI/CD",
         "Performance Tuning"
     ],
@@ -123,7 +124,7 @@
         {
             "degree": "Bachelor of Technology (B-Tech), Computer Science and Engineering",
             "institution": "West Bengal University of Technology",
-            "year": "2015"
+            "year": "2008"
         }
     ]
 }
