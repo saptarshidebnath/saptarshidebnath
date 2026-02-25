@@ -5,6 +5,40 @@ import { renderResumeHTML, renderHeroHTML, renderSocialLinksHTML, renderContactH
 // Initialize the 3D hero background
 initWebGL();
 
+// Mobile menu toggle logic
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileMenu.classList.contains('menu-open');
+        if (isOpen) {
+            mobileMenu.classList.remove('menu-open');
+            mobileMenu.classList.add('menu-closed');
+        } else {
+            mobileMenu.classList.remove('menu-closed');
+            mobileMenu.classList.add('menu-open');
+        }
+    });
+
+    // Close mobile menu when a link inside it is clicked
+    mobileMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('menu-open');
+            mobileMenu.classList.add('menu-closed');
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target as Node) && !mobileMenuBtn.contains(e.target as Node)) {
+            mobileMenu.classList.remove('menu-open');
+            mobileMenu.classList.add('menu-closed');
+        }
+    });
+}
+
 // Helper to handle contact info reveal
 function setupRevealListener(id: string, type: 'email' | 'phone') {
     const el = document.getElementById(id);

@@ -35,6 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Outfit:wght@400;500;700&display=swap"
         rel="stylesheet">
     <meta name="theme-color" content="#1e293b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 
 <body
@@ -43,7 +44,7 @@
     <!-- Sticky Navigation -->
     <header
         class="fixed top-0 w-full bg-[var(--bg-primary)]/80 backdrop-blur-md z-50 border-b border-white/10 print:hidden">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative">
             <div class="font-bold text-xl tracking-tight"><a href="/"
                     class="nav-link hover:text-blue-400 transition-colors">SD.</a></div>
             <div class="hidden sm:flex space-x-8 nav-links">
@@ -54,8 +55,9 @@
                     class="nav-link text-sm font-medium hover:text-blue-400 transition-colors">Contact</a>
             </div>
             <div class="sm:hidden flex items-center">
-                <!-- Simple mobile menu toggle placeholder -->
-                <button type="button" class="text-slate-400 hover:text-slate-50 focus:outline-none">
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" type="button"
+                    class="text-slate-400 hover:text-slate-50 focus:outline-none cursor-pointer">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
@@ -63,6 +65,17 @@
                 </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu"
+            class="menu-bizarre-anim menu-closed sm:hidden absolute top-16 left-0 w-full bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-white/10 px-4 pt-2 pb-4 space-y-1 shadow-2xl z-40">
+            <a href="/"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-50 hover:text-blue-400 hover:bg-white/5 transition-colors">Home</a>
+            <a href="/resume"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-50 hover:text-blue-400 hover:bg-white/5 transition-colors">Resume</a>
+            <a href="/contact"
+                class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-50 hover:text-blue-400 hover:bg-white/5 transition-colors">Contact</a>
+        </div>
     </header>
 
     <!-- Main Content -->

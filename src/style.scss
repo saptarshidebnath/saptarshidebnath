@@ -151,4 +151,21 @@ body {
     .print-preview {
         @include apply-print-styles;
     }
+
+    /* Accelerating in-place menu animation */
+    .menu-bizarre-anim {
+        transition: opacity 0.5s ease-in, visibility 0.5s;
+    }
+
+    .menu-closed {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .menu-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
 }

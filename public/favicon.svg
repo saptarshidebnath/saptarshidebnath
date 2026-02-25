@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Rounded dark background -->
+  <rect x="0" y="0" width="256" height="256" rx="48" fill="#171717"/>
+  
+  <!-- Define the gradient for the text -->
+  <defs>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Typography -->
+  <text 
+    x="128" 
+    y="138" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="120" 
+    font-weight="bold" 
+    text-anchor="middle" 
+    dominant-baseline="middle" 
+    fill="url(#textGrad)">SD.</text>
+</svg>
