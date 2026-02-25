@@ -103,27 +103,6 @@ async function renderResume() {
         setupRevealListener('reveal-email-contact', 'email');
         setupRevealListener('reveal-phone-contact', 'phone');
 
-        // Print Preview Toggle
-        const togglePrintBtn = document.getElementById('toggle-print-preview-btn');
-        if (togglePrintBtn) {
-            togglePrintBtn.addEventListener('click', () => {
-                document.documentElement.classList.toggle('print-preview');
-                const isPreview = document.documentElement.classList.contains('print-preview');
-                togglePrintBtn.textContent = isPreview ? 'Exit Preview' : 'Preview Print';
-
-                // When in preview, we might need to hide/show views correctly
-                if (isPreview) {
-                    const resumeView = document.getElementById('view-resume');
-                    if (resumeView) {
-                        resumeView.classList.remove('hidden');
-                        resumeView.style.display = 'block';
-                    }
-                } else {
-                    handleRoute(); // Refresh visibility based on path
-                }
-            });
-        }
-
         // PDF Download
         const downloadBtn = document.getElementById('download-resume-btn');
         if (downloadBtn) {
