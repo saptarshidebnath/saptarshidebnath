@@ -26,7 +26,7 @@
         },
         {
             "role": "Senior Specialist (Technical Architect)",
-            "company": "Deloitte (Client: Edward Jones)",
+            "company": "Deloitte | Client: Edward Jones",
             "duration": "Feb 2023 - Nov 2023",
             "web_summary": "Provided technical leadership and architectural oversight for an enterprise contact management system.",
             "highlights": [
@@ -37,7 +37,7 @@
         },
         {
             "role": "Technical Architect / Lead",
-            "company": "Mindtree Ltd (Client: Marriott International)",
+            "company": "Mindtree Ltd | Client: Marriott International",
             "duration": "Jan 2019 - Dec 2022",
             "web_summary": "Spearheaded the transition of monolithic reservation systems to reactive, cloud-native microservices.",
             "highlights": [
@@ -49,7 +49,7 @@
         },
         {
             "role": "Senior Software Engineer / Technical Lead",
-            "company": "Mindtree Ltd (Client: Amex GBT)",
+            "company": "Mindtree Ltd | Client: Amex GBT",
             "duration": "Sep 2017 - Dec 2018",
             "web_summary": "Managed a complex travel portal microservices ecosystem and automated deployment pipelines.",
             "highlights": [
@@ -61,7 +61,7 @@
         },
         {
             "role": "Senior Software Engineer",
-            "company": "Wipro Technologies (Client: Capital One)",
+            "company": "Wipro Technologies | Client: Capital One",
             "duration": "Oct 2015 - Aug 2017",
             "web_summary": "Key contributor to system automation and AWS infrastructure certification initiatives.",
             "highlights": [
@@ -73,7 +73,7 @@
         },
         {
             "role": "Senior Software Engineer / Team Lead",
-            "company": "Wipro Technologies (Client: Novartis)",
+            "company": "Wipro Technologies | Client: Novartis",
             "duration": "Nov 2011 - Aug 2017",
             "web_summary": "Onsite Coordinator and Lead for digital marketing and e-commerce platforms.",
             "highlights": [
@@ -85,7 +85,7 @@
         },
         {
             "role": "Software Engineer",
-            "company": "Wipro Technologies (Client: Bank Of New York Mellon)",
+            "company": "Wipro Technologies | Client: Bank Of New York Mellon",
             "duration": "Sep 2009 - Oct 2011",
             "web_summary": "Developed custom reporting solutions for large scale banking infrastructure.",
             "highlights": [

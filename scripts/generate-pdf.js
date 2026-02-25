@@ -66,7 +66,13 @@ import { existsSync, mkdirSync } from 'fs';
 
             document.body.style.backgroundColor = 'white';
             document.body.style.color = 'black';
-            document.body.style.overflow = 'hidden'; // Avoid accidental scrollbars
+            document.body.style.height = 'auto';
+            document.body.style.minHeight = '100%';
+            document.body.style.overflow = 'visible';
+
+            html.style.backgroundColor = 'white';
+            html.style.height = 'auto';
+            html.style.minHeight = '100%';
 
             const resumeSection = document.getElementById('view-resume');
             const container = document.getElementById('resume-container');
@@ -78,7 +84,8 @@ import { existsSync, mkdirSync } from 'fs';
                 resumeSection.style.setProperty('color', 'black', 'important');
                 resumeSection.style.setProperty('padding', '0', 'important');
                 resumeSection.style.setProperty('margin', '0', 'important');
-                resumeSection.style.setProperty('brightness', '1', 'important');
+                resumeSection.style.setProperty('filter', 'none', 'important');
+                resumeSection.style.setProperty('backdrop-filter', 'none', 'important');
 
                 // Explicitly clear container styles and prevent the "blue glow" shadow
                 container.style.setProperty('background-color', 'white', 'important');
@@ -92,6 +99,14 @@ import { existsSync, mkdirSync } from 'fs';
                 // Hide ALL other sections and potential overlapping elements
                 document.querySelectorAll('section:not(#view-resume), header, footer, canvas, button:not(.hidden-print), .print\\:hidden').forEach(el => {
                     el.style.setProperty('display', 'none', 'important');
+                });
+
+                // Ensure main and other wrappers don't leak backgrounds
+                document.querySelectorAll('main, div:not(#resume-container):not(#view-resume)').forEach(el => {
+                    el.style.setProperty('background-color', 'transparent', 'important');
+                    el.style.setProperty('background-image', 'none', 'important');
+                    el.style.setProperty('box-shadow', 'none', 'important');
+                    el.style.setProperty('filter', 'none', 'important');
                 });
 
                 // Clear out ALL thematic styles recursively
@@ -123,8 +138,8 @@ import { existsSync, mkdirSync } from 'fs';
 
         await page.pdf({
             path: pdfPath,
-            format: 'A4',
-            printBackground: true,
+            format: 'Letter',
+            printBackground: false,
             margin: {
                 top: '0.5in',
                 bottom: '0.5in',
