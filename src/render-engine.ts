@@ -38,9 +38,9 @@ export function renderResumeHTML(resumeData: ResumeData): string {
 
     // Header / Summary
     html += `
-        <div class="mb-10 text-center sm:text-left print:mb-6 print:text-left print:border-b-2 print:border-black print:pb-4">
-            <h3 class="text-3xl font-bold text-white print:text-black print:text-5xl print:font-serif">${resumeData.name}</h3>
-            <div class="mt-2 text-sm text-slate-400 flex flex-wrap justify-center sm:justify-start gap-4 print:mt-1 print:text-black">
+        <div class="mb-10 text-center sm:text-left print:mb-6 print:border-b-2 print:border-black print:pb-4">
+            <h3 class="text-3xl font-bold text-white print:text-black print:text-5xl print:font-serif print:text-center">${resumeData.name}</h3>
+            <div class="mt-2 text-sm text-slate-400 flex flex-wrap justify-center sm:justify-start print:justify-center gap-4 print:mt-1 print:text-black">
                 <span class="print:hidden">
                     <button id="reveal-email" class="hover:text-blue-400 transition-colors cursor-pointer" data-e="${btoa(resumeData.contact.email)}">
                         Click to reveal email
@@ -62,10 +62,9 @@ export function renderResumeHTML(resumeData: ResumeData): string {
                 <span class="print:hidden">&bull;</span>
                 <span>${resumeData.contact.location}</span>
                 <span class="print:hidden">&bull;</span>
-                <span class="hidden print:inline-block">|</span>
-                <span>${resumeData.contact.linkedIn}</span>
+                <span class="print:hidden">${resumeData.contact.linkedIn}</span>
             </div>
-            <p class="mt-4 text-slate-300 leading-relaxed max-w-3xl print:text-black print:mt-3 print:leading-snug">${resumeData.summary}</p>
+            <p class="mt-4 text-slate-300 left-align sm:text-left leading-relaxed max-w-3xl print:text-black print:mt-3 print:leading-snug print:text-left">${resumeData.summary}</p>
         </div>
     `;
 
@@ -131,8 +130,8 @@ export function renderResumeHTML(resumeData: ResumeData): string {
         html += `
         <div class="prevent-print-break">
             <h4 class="text-xl font-bold text-white border-b border-slate-600 pb-2 mb-6 print:mb-2 print:text-black print:text-lg print:border-black print:uppercase print:tracking-wide">Technical Skills</h4>
-            <div class="flex flex-wrap gap-2 print:gap-1">
-                ${resumeData.skills.map((skill: string) => `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-800/40 text-blue-300 print:px-0 print:py-0 print:rounded-none print:bg-transparent print:text-black print:font-normal print:after:content-[',_'] print:last:after:content-['']">${skill}</span>`).join('')}
+            <div class="flex flex-wrap gap-2 print:gap-1.5">
+                ${resumeData.skills.map((skill: string) => `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-800/40 text-blue-300 print:px-2 print:py-0.5 print:rounded-md print:bg-slate-100 print:text-black print:text-xs print:font-semibold print:border print:border-slate-300">${skill}</span>`).join('')}
             </div>
         </div>`;
     }
